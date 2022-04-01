@@ -1,6 +1,7 @@
 <?php
 $cluster = Cassandra::cluster()
-              ->withContactPoints('172.16.1.28,172.16.1.182,172.16.1.181,172.16.1.25,172.16.1.185')
+              ->withContactPoints('ec2-13-233-195-46.ap-south-1.compute.amazonaws.com')
+              //->withContactPoints('172.16.1.28,172.16.1.182,172.16.1.181,172.16.1.25,172.16.1.185')
               ->withPort(9042)
               ->withCredentials("earthone", "XuWxgzpZ2rz")
               ->build();
@@ -16,7 +17,8 @@ while(true){
       $eventcount=$session->execute("select count(*) from events_data where trackerid=".$row['trackerid']." and event_id=4 and year_month=202203");
       foreach ($eventcount as $rows){
         if($rows['count']==0 && $row['is_deleted']==0){
-          echo $row['chasis_number'] ." - ".$row['updated_at'] ." - ".$row['trackerid'] ." count - ".$rows['count']. "<br> \n";
+          $finalarr=array("chassis"=>$row['chasis_number'],"updatedat"=>$row['updated_at'],"trackerid"=>$row['trackerid'],"count"=>$rows['count']);
+          //echo $row['chasis_number'] ." - ".$row['updated_at'] ." - ".$row['trackerid'] ." count - ".$rows['count']. "<br> \n";
         }
       }
     }
