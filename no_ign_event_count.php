@@ -13,10 +13,10 @@ $result = $future->get();
 while(true){
   echo "entries in page: " . $result->count() . "<br><br>\n\n";
   foreach ($result as $row) {
-    if($row['trackerid']!=''){
+    if($row['trackerid']!=''&& $row['is_deleted']==0 && $row['category']!= 'cashbox' && $row['category']!= 'cash_in_transit'){
       $eventcount=$session->execute("select count(*) from events_data where trackerid=".$row['trackerid']." and event_id=4 and year_month=202203");
       foreach ($eventcount as $rows){
-        if($rows['count']==0 && $row['is_deleted']==0 && $row['category']!= 'cashbox' && $row['category']!= 'cash_in_transit'){
+        if($rows['count']==0){
           //$finalarr=array("chassis"=>$row['chasis_number'],"updatedat"=>$row['updated_at'],"trackerid"=>$row['trackerid'],"count"=>$rows['count']);
           echo $row['chasis_number'] ." - ".$row['updated_at'] ." - ".$row['trackerid'] ." count - ".$rows['count']. "<br> \n";
         }
