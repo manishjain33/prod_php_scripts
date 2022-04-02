@@ -14,7 +14,7 @@ while(true){
   echo "entries in page: " . $result->count() . "<br><br>\n\n";
   foreach ($result as $row) {
     if($row['trackerid']==''){
-        echo $row['chasis_number'] ." - ".$row['updated_at'] ." - ".$row['trackerid'] ." count - ".$rows['count']. "<br> \n";
+        echo $row['foa_id'] ." - ".$row['chasis_number'] . "<br> \n";
     }
   }
   if ($result->isLastPage()){ break; }
