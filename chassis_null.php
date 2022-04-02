@@ -11,10 +11,10 @@ $future  = $session->executeAsync("SELECT * FROM vehicles_by_vehicleid",$options
 $result = $future->get();
 
 while(true){
-  echo "entries in page: " . $result->count() . "<br><br>\n\n";
+  //echo "entries in page: " . $result->count() . "<br><br>\n\n";
   foreach ($result as $row) {
     if($row['trackerid']==''){
-        echo $row['foa_id'] ." - ".$row['chasis_number'] . "<br> \n";
+        echo $row['foa_id'] ." / ".$row['chasis_number'] . "<br> \n";
     }
   }
   if ($result->isLastPage()){ break; }
