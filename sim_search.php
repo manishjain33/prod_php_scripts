@@ -8,15 +8,8 @@ $cluster = Cassandra::cluster()
 //->withCredentials("earthone", "earthone")
 ->build();
 $session = $cluster->connect('earthone');
-$options = array('page_size' => 100);
-$future  = $session->executeAsync("SELECT * FROM trackers_by_imei where sim_number='".$sim."'",$options);
-$result = $future->get();
-while(true){
-    echo "entries in page: " . $result->count() . "<br><br>\n\n";
-    foreach ($result as $row) {
-          echo $row['imei'] . "<br> \n";
-    }
-    if ($result->isLastPage()){ break; }
-    $result=$result->nextPage();
-  }
+$result  = $session->executeAsync("SELECT * FROM trackers_by_imei where sim_number='".$sim."'");
+foreach ($result as $row) {
+    echo $row['imei'] . "<br> \n";
+}
 ?>
