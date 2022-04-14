@@ -6,7 +6,7 @@ $cluster = Cassandra::cluster()
 ->withCredentials("earthone", "XuWxgzpZ2rz")
 ->build();
 $session = $cluster->connect('earthone');
-$result  = $session->executeAsync("SELECT * FROM trackers_by_imei where sim_number='971831001024750' ALLOW FILTERING");
+$result  = $session->execute("SELECT * FROM trackers_by_imei where sim_number='971831001024750' ALLOW FILTERING");
 foreach ($result as $row) {
     echo $row['imei'] . "<br> \n";
 }
