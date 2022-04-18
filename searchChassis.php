@@ -25,7 +25,7 @@ curl_close($curl);
 $res=json_decode($response);
 // for  the testing 
 // Cassandra query
-$result  = $session->execute("SELECT * FROM organizations where orgid=".$res->orgid);
+$result  = $session->execute("SELECT * FROM organizations where id=".$res->orgid);
 foreach ($result as $row) {
     $ $row['imei'];
 }
