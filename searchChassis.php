@@ -22,9 +22,9 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
-echo $response;
+$response;
 // for  the testing 
-$orgid=$response["orgid"];
+echo $orgid=$response->orgid;
 // Cassandra query
 $result  = $session->execute("SELECT * FROM organizations where orgid=".$orgid);
 foreach ($result as $row) {
