@@ -27,6 +27,6 @@ $res=json_decode($response);
 // Cassandra query
 $result  = $session->execute("SELECT * FROM organizations where id=".$res->orgid);
 foreach ($result as $row) {
-    $ $row['imei'];
+    echo $row['imei'];
 }
 ?>
