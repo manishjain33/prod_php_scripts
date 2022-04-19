@@ -35,6 +35,7 @@ $vendQuery  = $session->execute("SELECT * FROM users_by_userid where userid=".$v
 foreach ($vendQuery as $venrow){
     $vendor= $venrow['company'];
 }
-$res->vendorName=$vendor;
+$res=array("vendor_name"=>$vendor,"orgid"=>$res->orgid,"category"=>$res->category,"chasis_number"=>$res->chasis_number,"is_deleted"=>$res->is_deleted,"license_plate_state"=>$res->license_plate_state,"plate_number"=>$res->plate_number,"purchase_date"=>$res->purchase_date,"trackerid"=>$res->trackerid);
+
 echo json_encode($res);
 ?>
