@@ -27,11 +27,13 @@ $res=json_decode($response);
 // Cassandra query
 $result  = $session->execute("SELECT * FROM organizations where id=".$res->orgid);
 foreach ($result as $row) {
-    echo $row['name']. " / ".$row['vendorid']." / ";
+    //echo $row['name']. " / ".$row['vendorid']." / ";
     $vendorID=$row['vendorid'];
 }
 $vendQuery  = $session->execute("SELECT * FROM users_by_userid where userid=".$vendorID);
 foreach ($vendQuery as $venrow){
-    echo $venrow['company'];
+    $vendor= $venrow['company'];
 }
+$res->vendorName=$vendor;
+echo json_encode($res);
 ?>
