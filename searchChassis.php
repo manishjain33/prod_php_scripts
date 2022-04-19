@@ -1,4 +1,5 @@
 <?php
+$chassis=$_GET['q'];
 $cluster = Cassandra::cluster()
 ->withContactPoints('172.16.1.28,172.16.1.182,172.16.1.181,172.16.1.25,172.16.1.185')
 ->withPort(9042)
@@ -9,7 +10,7 @@ $session = $cluster->connect('earthone');
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'http://172.16.1.28:8888/api/vehicle/search?criteria=chassis_number&q=3N1CP5BV2LL504946',
+  CURLOPT_URL => 'http://172.16.1.28:8888/api/vehicle/search?criteria=chassis_number&q='.$chassis,
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
