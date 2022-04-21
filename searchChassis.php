@@ -30,6 +30,7 @@ $result  = $session->execute("SELECT * FROM organizations where id=".$res->orgid
 foreach ($result as $row) {
     //echo $row['name']. " / ".$row['vendorid']." / ";
     $vendorID=$row['vendorid'];
+    $orgName=$row['name'];
 }
 $vendQuery  = $session->execute("SELECT * FROM users_by_userid where userid=".$vendorID);
 foreach ($vendQuery as $venrow){
