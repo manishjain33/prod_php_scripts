@@ -17,7 +17,7 @@ while ($trackerid = mysqli_fetch_assoc($result))
   $tidData[]=$trackerid;
 }
 mysqli_close($dbhandle);
-//print_r($tidData);
+print_r($tidData[0]);
 $cluster = Cassandra::cluster()
 ->withContactPoints('172.16.1.28,172.16.1.182,172.16.1.181,172.16.1.25,172.16.1.185')
 ->withPort(9042)
