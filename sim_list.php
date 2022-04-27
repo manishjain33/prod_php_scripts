@@ -17,7 +17,7 @@ while ($trackerid = mysqli_fetch_assoc($result))
   $tidData[]=$trackerid;
 }
 mysqli_close($dbhandle);
-print_r($tidData[0]);
+//print_r($tidData[0]);
 $cluster = Cassandra::cluster()
 ->withContactPoints('172.16.1.28,172.16.1.182,172.16.1.181,172.16.1.25,172.16.1.185')
 ->withPort(9042)
@@ -25,12 +25,12 @@ $cluster = Cassandra::cluster()
 ->build();
 $session = $cluster->connect('earthone');
 for($i=0;$i>count($tidData);$i++){
-    echo "SELECT * FROM trackers_by_trackerid where trackerid=".$tidData[$i];
-    echo "<br>";
-    //$result  = $session->execute("SELECT * FROM trackers_by_trackerid where trackerid=".$tidData[$i]);
-    // foreach ($result as $row) {
-    //     echo $row['imei']." / ".$row['trackerid']." / ".$row['sim_number'];
-    // }
+    //echo "SELECT * FROM trackers_by_trackerid where trackerid=".$tidData[$i]['tid'];
+    //echo "<br>";
+    $result  = $session->execute("SELECT * FROM trackers_by_trackerid where trackerid=".$tidData[$i]);
+    foreach ($result as $row) {
+        echo $row['imei']." / ".$row['trackerid']." / ".$row['sim_number'];
+    }
 }
 
 ?>
