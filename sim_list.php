@@ -25,7 +25,7 @@ $cluster = Cassandra::cluster()
 ->build();
 $session = $cluster->connect('earthone');
 for($i=0;$i<count($tidData);$i++){
-    echo "SELECT * FROM trackers_by_trackerid where trackerid=".$tidData[$i]['tid'];
+    //echo "SELECT * FROM trackers_by_trackerid where trackerid=".$tidData[$i]['tid'];
     //echo "<br>";
     $result  = $session->execute("SELECT * FROM trackers_by_trackerid where trackerid=".$tidData[$i]['tid']);
     foreach ($result as $row) {
