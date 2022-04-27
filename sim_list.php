@@ -30,6 +30,7 @@ for($i=0;$i<count($tidData);$i++){
     $result  = $session->execute("SELECT * FROM trackers_by_trackerid where trackerid=".$tidData[$i]['tid']);
     foreach ($result as $row) {
         echo $row['imei']." / ".$row['trackerid']." / ".$row['sim_number'];
+        echo "<br>";
     }
 }
 
