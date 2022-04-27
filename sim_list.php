@@ -1,6 +1,6 @@
 <?php
 $username = "dps";
-$password = "dps";
+$password = "dps123";
 $hostname = "172.16.1.4"; 
 
 //connection to the database
