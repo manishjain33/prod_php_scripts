@@ -10,8 +10,8 @@ $session = $cluster->connect('earthone');
 for($i=0;$i<count($orgid);$i++){
     $result  = $session->execute("SELECT * FROM vehicles_by_vehicleid where orgid=".$orgid[$i]);
     foreach ($result as $row) {
-        print_r($row);
+        echo($row['category'].' / '.$row['chasis_number'].' / '.$row['insurance_renewal'].' / '.$row['purchase_date'].' / '.$row['registration_expiry'].' / '.$row['updated_at']);
         echo "<br>";
     }
 }
-?>
+?
