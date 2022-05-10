@@ -28,7 +28,11 @@ while(true){
           foreach ($vendQuery as $venrow){
               $vendor= $venrow['company'];
           }
-          echo $vendor ." - ".$orgName ." - ".$row['chasis_number'] ." - ".$row['updated_at'] ." - ".$row['trackerid'] ." - ".$rows['count']. "<br> \n";
+          $trackerQuery  = $session->execute("SELECT * FROM trackers_by_trackerid where trackerid=".$row['trackerid']);
+          foreach ($trackerQuery as $trackrow){
+              $imei= $trackrow['imei'];
+          }
+          echo $vendor ." - ".$orgName ." - ".$row['chasis_number'] ." - ".$row['updated_at'] ." - ".$row['trackerid']." - ".$row['imei'] ." - ".$rows['count']. "<br> \n";
         }
       }
     }
