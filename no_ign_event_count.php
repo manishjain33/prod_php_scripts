@@ -21,14 +21,14 @@ while(true){
           $Orgresult  = $session->execute("SELECT * FROM organizations where id=".$row['orgid']);
           foreach ($Orgresult as $rowOrg) {
               //echo $row['name']. " / ".$row['vendorid']." / ";
-              $vendorID=$row['vendorid'];
-              $orgName=$row['name'];
+              $vendorID=$rowOrg['vendorid'];
+              $orgName=$rowOrg['name'];
           }
           $vendQuery  = $session->execute("SELECT * FROM users_by_userid where userid=".$vendorID);
           foreach ($vendQuery as $venrow){
               $vendor= $venrow['company'];
           }
-          echo $row['vendor'] ." - ".$row['orgName'] ." - ".$row['chasis_number'] ." - ".$row['updated_at'] ." - ".$row['trackerid'] ." - ".$rows['count']. "<br> \n";
+          echo $vendor ." - ".$orgName ." - ".$row['chasis_number'] ." - ".$row['updated_at'] ." - ".$row['trackerid'] ." - ".$rows['count']. "<br> \n";
         }
       }
     }
