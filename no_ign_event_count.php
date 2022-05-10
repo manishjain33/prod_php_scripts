@@ -14,11 +14,21 @@ while(true){
   echo "entries in page: " . $result->count() . "<br><br>\n\n";
   foreach ($result as $row) {
     if($row['trackerid']!=''&& $row['is_deleted']==0 && $row['category']!= 'cashbox' && $row['category']!= 'cash_in_transit'){
-      $eventcount=$session->execute("select count(*) from events_data where trackerid=".$row['trackerid']." and event_id=4 and year_month=202203");
+      $eventcount=$session->execute("select count(*) from events_data where trackerid=".$row['trackerid']." and event_id=4 and year_month=202204");
       foreach ($eventcount as $rows){
         if($rows['count']==0){
           //$finalarr=array("chassis"=>$row['chasis_number'],"updatedat"=>$row['updated_at'],"trackerid"=>$row['trackerid'],"count"=>$rows['count']);
-          echo $row['chasis_number'] ." - ".$row['updated_at'] ." - ".$row['trackerid'] ." count - ".$rows['count']. "<br> \n";
+          $Orgresult  = $session->execute("SELECT * FROM organizations where id=".$row['orgid']);
+          foreach ($Orgresult as $rowOrg) {
+              //echo $row['name']. " / ".$row['vendorid']." / ";
+              $vendorID=$row['vendorid'];
+              $orgName=$row['name'];
+          }
+          $vendQuery  = $session->execute("SELECT * FROM users_by_userid where userid=".$vendorID);
+          foreach ($vendQuery as $venrow){
+              $vendor= $venrow['company'];
+          }
+          echo $row['vendor'] ." - ".$row['orgName'] ." - ".$row['chasis_number'] ." - ".$row['updated_at'] ." - ".$row['trackerid'] ." - ".$rows['count']. "<br> \n";
         }
       }
     }
