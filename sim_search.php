@@ -8,6 +8,6 @@ $cluster = Cassandra::cluster()
 $session = $cluster->connect('earthone');
 $result  = $session->execute("SELECT * FROM trackers_by_imei where sim_number='".$sim."' ALLOW FILTERING");
 foreach ($result as $row) {
-    echo $row['imei'];
+    echo $row['imei']." , ";
 }
 ?>
