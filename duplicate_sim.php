@@ -7,6 +7,6 @@ $cluster = Cassandra::cluster()
 $session = $cluster->connect('earthone');
 $result  = $session->execute("SELECT * FROM users_by_userid WHERE (user_type = 'vendor') ALLOW FILTERING;");
 foreach ($result as $row) {
-    echo $row['company']." , ";
+    echo $row['company'];
 }
 ?>
