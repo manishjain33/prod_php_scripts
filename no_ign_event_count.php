@@ -14,7 +14,7 @@ while(true){
   echo "entries in page: " . $result->count() . "<br><br>\n\n";
   foreach ($result as $row) {
     if($row['trackerid']!=''&& $row['is_deleted']==0 && $row['category']!= 'cashbox' && $row['category']!= 'cash_in_transit'){
-      $eventcount=$session->execute("select count(*) from events_data where trackerid=".$row['trackerid']." and event_id=4 and year_month=202204");
+      $eventcount=$session->execute("select count(*) from events_data where trackerid=".$row['trackerid']." and event_id=4 and year_month=202205");
       foreach ($eventcount as $rows){
         if($rows['count']==0){
           //$finalarr=array("chassis"=>$row['chasis_number'],"updatedat"=>$row['updated_at'],"trackerid"=>$row['trackerid'],"count"=>$rows['count']);
