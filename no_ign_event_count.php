@@ -32,7 +32,7 @@ while(true){
           foreach ($trackerQuery as $trackrow){
               $imei= $trackrow['imei'];
           }
-          echo $vendor ." - ".$orgName ." - ".$row['chasis_number'] ." - ".$row['updated_at'] ." - ".$row['trackerid']." - ".$imei ." - ".$rows['count']. "<br> \n";
+          echo $vendor ." # ".$orgName ." # ".$row['chasis_number'] ." # ".$row['updated_at'] ." # ".$row['trackerid']." # ".$imei ." # ".$rows['count']. "<br> \n";
         }
       }
     }
