@@ -7,7 +7,7 @@ $cluster = Cassandra::cluster()
 ->withCredentials("earthone", "XuWxgzpZ2rz")
 ->build();
 $session = $cluster->connect('earthone');
-$result  = $session->execute("SELECT * FROM sim_cards WHERE (msisdn =". $simnum.") ALLOW FILTERING;");
+$result  = $session->execute("SELECT * FROM sim_cards WHERE (msisdn ='". $simnum."') ALLOW FILTERING;");
 foreach ($result as $row) {
     echo $row['iccid'];
 }
