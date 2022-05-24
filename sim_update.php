@@ -8,6 +8,6 @@ $cluster = Cassandra::cluster()
 $session = $cluster->connect('earthone');
 $result  = $session->execute("SELECT * FROM sim_cards WHERE (msisdn = $simnum) ALLOW FILTERING;");
 foreach ($result as $row) {
-    echo $row['company'];
+    echo $row['iccid'];
 }
 ?>
