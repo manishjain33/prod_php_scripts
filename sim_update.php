@@ -9,7 +9,7 @@ $cluster = Cassandra::cluster()
 $session = $cluster->connect('earthone');
 $result  = $session->execute("SELECT * FROM sim_cards WHERE (msisdn ='". $simnum."') ALLOW FILTERING;");
 foreach ($result as $row) {
-    $update  = $session->execute("UPDATE sim_cards SET status ='".$status."' WHERE (iccid = '".$row['iccid']."'");
-    echo "status updated";
+    $update  = $session->execute("UPDATE sim_cards SET status ='".$status."' WHERE (iccid = '".$row['iccid']."')");
+    echo "Status updated";
 }
 ?>
