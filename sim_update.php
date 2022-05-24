@@ -1,6 +1,8 @@
 <?php
 $simnum=$_GET['sno'];
+$status=$_GET['status'];
 $simnum='971831100423160';
+$status="active";
 $cluster = Cassandra::cluster()
 ->withContactPoints('172.16.1.28,172.16.1.182,172.16.1.181,172.16.1.25,172.16.1.185')
 ->withPort(9042)
@@ -9,6 +11,6 @@ $cluster = Cassandra::cluster()
 $session = $cluster->connect('earthone');
 $result  = $session->execute("SELECT * FROM sim_cards WHERE (msisdn ='". $simnum."') ALLOW FILTERING;");
 foreach ($result as $row) {
-    echo $row['iccid'];
+    $update  = $session->execute("UPDATE sim_cards SET status ='".$status."' WHERE (iccid = '".$row['iccid']."');");
 }
 ?>
