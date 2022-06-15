@@ -20,7 +20,7 @@ for($i=0;$i<=5;$i++){
     foreach ($result as $row) {
         print_r($row['userid']);
         echo"<br>";
-        count($row['userid']);
+        echo "count - ".count($row['userid']);
         echo"<br>";
     }
 }
