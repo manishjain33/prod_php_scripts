@@ -14,7 +14,8 @@ while ($orgRow = mysqli_fetch_assoc($orgQuery_result))
 {
   $trackers[]=$orgRow;
 }
-for($i=0;$i<=count($trackers);$i++){
+//for($i=0;$i<=count($trackers);$i++){
+for($i=0;$i<=2;$i++){
     $result  = $session->execute("SELECT * FROM trackers_by_trackerid WHERE (trackerid =".$trackers[$i]['tid']." );");
     foreach ($result as $row) {
         print_r($row);
