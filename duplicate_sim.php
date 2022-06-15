@@ -8,17 +8,42 @@ $selected = mysqli_select_db($dbhandle,'dubai') ;
 if($dbhandle->connect_errno > 0){
   die('Unable to connect to database' . $dbhandle->connect_error);
 }
-$orgQuery = "select * from sim1";
+$orgQuery = "select * from tid1";
 $orgQuery_result = mysqli_query($dbhandle, $orgQuery);
 while ($orgRow = mysqli_fetch_assoc($orgQuery_result))
 {
-  $chassData[]=$orgRow;
+  $trackers[]=$orgRow;
 }
-print_r($chassData);
-echo "<br>";
-$result  = $session->execute("SELECT * FROM users_by_userid WHERE (user_type = 'vendor') ALLOW FILTERING;");
-foreach ($result as $row) {
-    echo $row['company'];
-}
+// print_r($chassData);
+// echo "<br>";
+// $result  = $session->execute("SELECT * FROM users_by_userid WHERE (user_type = 'vendor') ALLOW FILTERING;");
+// foreach ($result as $row) {
+//     echo $row['company'];
+// }
 
+$curl = curl_init();
+for($a=0;$a=count($trackers);$a++){
+    $qu=array("trackerid"=>$trackers[$a],"suffix"=>"ST1462884773000");
+    $postdata=json_encode($qu);
+    curl_setopt_array($curl, array(
+        CURLOPT_URL => 'https://172.16.1.28:8888/api/licmgr/vehicle/stop',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'PUT',
+        CURLOPT_POSTFIELDS =>$postdata,
+        CURLOPT_HTTPHEADER => array(
+          'Content-Type: application/json',
+          'Cookie: SERVERID=kore'
+        ),
+      ));
+      
+      $response = curl_exec($curl);
+      print_r($trackers[$a]);
+      echo " - ".$response."<br>";
+}
+curl_close($curl);
 ?>
