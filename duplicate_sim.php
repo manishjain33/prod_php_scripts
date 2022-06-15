@@ -14,16 +14,17 @@ while ($orgRow = mysqli_fetch_assoc($orgQuery_result))
 {
   $trackers[]=$orgRow;
 }
-print_r($trackers);
- echo "<br>";
- die();
+// print_r($trackers);
+//  echo "<br>";
+//  die();
 // $result  = $session->execute("SELECT * FROM users_by_userid WHERE (user_type = 'vendor') ALLOW FILTERING;");
 // foreach ($result as $row) {
 //     echo $row['company'];
 // }
 
 $curl = curl_init();
-for($a=0;$a=count($trackers);$a++){
+for($a=0;$a<=2;$a++){
+//for($a=0;$a<=count($trackers);$a++){
     $qu=array("trackerid"=>$trackers[$a]["tid"],"suffix"=>"ST1462884773000");
     $postdata=json_encode($qu);
     curl_setopt_array($curl, array(
