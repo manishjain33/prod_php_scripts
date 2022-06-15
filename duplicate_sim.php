@@ -23,8 +23,8 @@ while ($orgRow = mysqli_fetch_assoc($orgQuery_result))
 // }
 
 $curl = curl_init();
-for($a=0;$a<=2;$a++){
-//for($a=0;$a<=count($trackers);$a++){
+//for($a=0;$a<=2;$a++){
+for($a=0;$a<=count($trackers);$a++){
     $qu=array("trackerid"=>$trackers[$a]["tid"],"suffix"=>"ST1462884773000");
     $postdata=json_encode($qu);
     curl_setopt_array($curl, array(
