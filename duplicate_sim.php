@@ -37,16 +37,12 @@ for($a=0;$a<=2;$a++){
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'PUT',
-        CURLOPT_POSTFIELDS =>$postdata,
-        CURLOPT_HTTPHEADER => array(
-          'Content-Type: application/json',
-          'Cookie: SERVERID=kore'
-        ),
+        CURLOPT_POSTFIELDS =>$postdata
       ));
       
       $response = curl_exec($curl);
       print_r($trackers[$a]["tid"]);
-      echo " - ".curl_getinfo($ch, CURLINFO_HTTP_CODE)."<br>";
+      echo " - ".curl_getinfo($curl, CURLINFO_HTTP_CODE)."<br>";
 }
 curl_close($curl);
 ?>
