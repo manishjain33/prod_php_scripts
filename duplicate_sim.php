@@ -14,8 +14,9 @@ while ($orgRow = mysqli_fetch_assoc($orgQuery_result))
 {
   $trackers[]=$orgRow;
 }
-// print_r($chassData);
-// echo "<br>";
+print_r($trackers);
+ echo "<br>";
+ die();
 // $result  = $session->execute("SELECT * FROM users_by_userid WHERE (user_type = 'vendor') ALLOW FILTERING;");
 // foreach ($result as $row) {
 //     echo $row['company'];
