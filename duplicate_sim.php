@@ -23,13 +23,14 @@ while ($orgRow = mysqli_fetch_assoc($orgQuery_result))
 // }
 
 $curl = curl_init();
-//for($a=0;$a<=2;$a++){
-for($a=0;$a<=count($trackers);$a++){
-    $qu=array("trackerid"=>$trackers[$a]["tid"],"suffix"=>"ST1462884773000");
+for($a=0;$a<=2;$a++){
+//for($a=0;$a<=count($trackers);$a++){
+    $qu=array("trackerid"=>$trackers[$a]["tid"],"suffix"=>"ST1605336988952");
     $postdata=json_encode($qu);
     curl_setopt_array($curl, array(
         CURLOPT_URL => 'https://172.16.1.28:8888/api/licmgr/vehicle/stop',
         CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HEADER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_TIMEOUT => 0,
@@ -45,7 +46,7 @@ for($a=0;$a<=count($trackers);$a++){
       
       $response = curl_exec($curl);
       print_r($trackers[$a]["tid"]);
-      echo " - ".$response."<br>";
+      echo " - ".curl_getinfo($ch, CURLINFO_HTTP_CODE)."<br>";
 }
 curl_close($curl);
 ?>
