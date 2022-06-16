@@ -14,13 +14,6 @@ while ($orgRow = mysqli_fetch_assoc($orgQuery_result))
 {
   $trackers[]=$orgRow;
 }
-// print_r($trackers);
-//  echo "<br>";
-//  die();
-// $result  = $session->execute("SELECT * FROM users_by_userid WHERE (user_type = 'vendor') ALLOW FILTERING;");
-// foreach ($result as $row) {
-//     echo $row['company'];
-// }
 
 $curl = curl_init();
 //for($a=0;$a<=2;$a++){
@@ -30,7 +23,7 @@ for($a=0;$a<=count($trackers);$a++){
     //echo $postdata;
     //echo "<br>";
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'https://172.16.1.28:8888/api/licmgr/vehicle/stop',
+        CURLOPT_URL => 'http://172.16.1.28:8888/api/licmgr/vehicle/stop',
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_HEADER => true,
         CURLOPT_ENCODING => '',
