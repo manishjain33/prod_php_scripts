@@ -24,5 +24,5 @@ for($i=0;$i<=25;$i++){
         echo"<br>";
     }
 }
-var_dump($data[0]);
+var_dump($data[0]->type);
 ?>
