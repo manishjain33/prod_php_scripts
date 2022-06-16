@@ -25,5 +25,5 @@ for($i=0;$i<=25;$i++){
     }
 }
 $aa=$data[0];
-var_dump(json_decode($aa));
+var_dump(json_encode($aa));
 ?>
