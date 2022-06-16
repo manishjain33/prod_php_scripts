@@ -38,7 +38,10 @@ for($a=0;$a<=count($trackers);$a++){
         CURLOPT_TIMEOUT => 0,
         CURLOPT_FOLLOWLOCATION => true,
         CURLOPT_CUSTOMREQUEST => 'PUT',
-        CURLOPT_POSTFIELDS =>$postdata
+        CURLOPT_POSTFIELDS =>$postdata,
+        CURLOPT_HTTPHEADER => array(
+          'Content-Type: application/json'
+        ),
       ));
       
       $response = curl_exec($curl);
