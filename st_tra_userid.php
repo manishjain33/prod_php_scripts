@@ -24,6 +24,6 @@ for($i=0;$i<=25;$i++){
         echo"<br>";
     }
 }
-$aa=$data[0];
-var_dump(json_encode($aa));
+$aa=json_encode($data[0]);
+echo $aa->values;
 ?>
