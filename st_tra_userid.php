@@ -18,12 +18,11 @@ while ($orgRow = mysqli_fetch_assoc($orgQuery_result))
 for($i=0;$i<=25;$i++){
     $result  = $session->execute("SELECT * FROM trackers_by_trackerid WHERE (trackerid =".$trackers[$i]['tid']." );");
     foreach ($result as $row) {
-        $data[]=$row['userid'];
+        $data[]=json_decode($row['userid']);
         echo"<br>";
         echo "count - ".count($row['userid']);
         echo"<br>";
     }
 }
-$aa=json_encode($data[0]);
-var_dump (json_decode ($aa->values));
+var_dump($data);
 ?>
