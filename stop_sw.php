@@ -43,7 +43,7 @@ for($a=0;$a<=count($trackers);$a++){
       $httpres1=curl_getinfo($curl,CURLINFO_RESPONSE_CODE);
       $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
       echo " - ".$httpcode." -2- ".$httpres1." https info <br>";
-      print_r($httpinfow);
+      //print_r($httpinfow);
 }
 curl_close($curl);
 ?>
