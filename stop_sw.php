@@ -27,8 +27,8 @@ $curl = curl_init();
 for($a=0;$a<=count($trackers);$a++){
     $qu=array("trackerid"=>$trackers[$a]["tid"],"suffix"=>"ST1605336988952");
     $postdata=json_encode($qu);
-    echo $postdata;
-    echo "<br>";
+    //echo $postdata;
+    //echo "<br>";
     curl_setopt_array($curl, array(
         CURLOPT_URL => 'https://172.16.1.28:8888/api/licmgr/vehicle/stop',
         CURLOPT_RETURNTRANSFER => true,
@@ -46,7 +46,8 @@ for($a=0;$a<=count($trackers);$a++){
       $httpinfow=curl_getinfo($curl);
       $httpres1=curl_getinfo($curl,CURLINFO_RESPONSE_CODE);
       $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-      echo " - ".$httpcode." -2- ".$httpres1." https info ".$httpinfow."<br>";
+      echo " - ".$httpcode." -2- ".$httpres1." https info <br>";
+      print_r($httpinfow);
 }
 curl_close($curl);
 ?>
