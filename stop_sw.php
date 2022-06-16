@@ -8,7 +8,7 @@ $selected = mysqli_select_db($dbhandle,'dubai') ;
 if($dbhandle->connect_errno > 0){
   die('Unable to connect to database' . $dbhandle->connect_error);
 }
-$orgQuery = "select * from tid1";
+$orgQuery = "select * from tid1 where sno>72875";
 $orgQuery_result = mysqli_query($dbhandle, $orgQuery);
 while ($orgRow = mysqli_fetch_assoc($orgQuery_result))
 {
