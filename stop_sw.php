@@ -35,14 +35,15 @@ for($a=0;$a<=2;$a++){
         CURLOPT_MAXREDIRS => 10,
         CURLOPT_TIMEOUT => 0,
         CURLOPT_FOLLOWLOCATION => true,
-        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
         CURLOPT_CUSTOMREQUEST => 'PUT',
         CURLOPT_POSTFIELDS =>$postdata
       ));
       
       $response = curl_exec($curl);
       print_r($trackers[$a]["tid"]);
-      echo " - ".curl_getinfo($curl, CURLINFO_HTTP_CODE)."<br>";
+      $httpres1=curl_getinfo($curl,CURLINFO_RESPONSE_CODE);
+      $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+      echo " - ".$httpcode." -2- ".$httpres1."<br>";
 }
 curl_close($curl);
 ?>
