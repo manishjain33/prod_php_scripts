@@ -43,9 +43,10 @@ for($a=0;$a<=count($trackers);$a++){
       
       $response = curl_exec($curl);
       print_r($trackers[$a]["tid"]);
+      $httpinfow=curl_getinfo($curl);
       $httpres1=curl_getinfo($curl,CURLINFO_RESPONSE_CODE);
       $httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
-      echo " - ".$httpcode." -2- ".$httpres1."<br>";
+      echo " - ".$httpcode." -2- ".$httpres1." https info ".$httpinfow."<br>";
 }
 curl_close($curl);
 ?>
