@@ -17,20 +17,12 @@ while ($orgRow = mysqli_fetch_assoc($orgQuery_result))
 //for($i=0;$i<=count($trackers);$i++){
 for($i=0;$i<=2;$i++){
     $result  = $session->execute("SELECT * FROM trackers_by_trackerid WHERE (trackerid =".$trackers[$i]['tid']." );");
-    // foreach ($result as $row) {
-    //     $data=$row['userid'];
-    //     print_r (Cassandra\Set($data));
-    //     echo"<br>";
-    //     echo "count - ".count($row['userid']);
-    //     echo"<br>";
-    // }
     foreach($result as $row)
     {
-        echo $row['trackerid'];
-        echo "<br>";
+        $imei= $row['imei'];
         foreach ($row['userid'] as $followed) {
             echo "<br>";
-            echo "  {$followed}" . PHP_EOL;
+            echo "  {$followed} , ";
         }
     }
 }
