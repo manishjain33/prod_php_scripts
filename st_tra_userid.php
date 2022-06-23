@@ -27,8 +27,10 @@ for($i=0;$i<=2;$i++){
     foreach($result as $row)
     {
         echo $row('trackerid');
+        echo "<br>";
         foreach ($row['userid'] as $followed) {
-        echo "  {$followed}" . PHP_EOL;
+            echo "<br>";
+            echo "  {$followed}" . PHP_EOL;
         }
     }
 }
