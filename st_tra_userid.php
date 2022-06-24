@@ -16,8 +16,8 @@ while ($orgRow = mysqli_fetch_assoc($orgQuery_result))
 }
 //for($i=0;$i<=count($trackers);$i++){
 for($i=0;$i<=2;$i++){
-    $tracker="50d0ef00-31e2-11e8-ac55-6cc3e8965b3a";
-    //$result  = $session->execute("SELECT * FROM trackers_by_trackerid WHERE (trackerid =".$trackers[$i]['tid']." );");
+    //$tracker="50d0ef00-31e2-11e8-ac55-6cc3e8965b3a";
+    $result  = $session->execute("SELECT * FROM trackers_by_trackerid WHERE (trackerid =".$trackers[$i]['tid']." );");
     $result  = $session->execute("SELECT * FROM trackers_by_trackerid WHERE (trackerid =".$tracker." );");
     foreach($result as $row)
     {
