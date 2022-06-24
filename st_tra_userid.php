@@ -24,8 +24,9 @@ for($i=0;$i<=2;$i++){
         $imei= $row['imei'];
         $tid= $row['trackerid'];
         $org= $row['orgid'];
-        echo "imei - ".$imei." trackerid - ". $tid . " org - " . $org;
         foreach ($row['userid'] as $followed) {
+            echo "imei - ".$imei." trackerid - ". $tid . " org - " . $org." userid - ". $followed . "<br>";
+            echo "update trackers_by_userid set is_deleted=1 where orgid=".$org.", userid=".$followed.", trackerid=".$tid;
             $update=$session->execute("update trackers_by_userid set is_deleted=1 where orgid=".$org.", userid=".$followed.", trackerid=".$tid);
         }
     }
