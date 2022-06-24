@@ -21,8 +21,7 @@ for($i=0;$i<=2;$i++){
     {
         $imei= $row['imei'];
         foreach ($row['userid'] as $followed) {
-            echo "<br>";
-            echo "  {$followed} , ";
+            $update=$session->execute("update trackers_by_userid")
         }
     }
 }
