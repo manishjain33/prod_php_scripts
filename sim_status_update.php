@@ -14,7 +14,7 @@ while ($iccidRow = mysqli_fetch_assoc($iccidQuery_result))
 {
     $iccid[]=$iccidRow;
 }
-for ($i=;$i<=count($iccid);$i++;){
+for ($i=0;$i<=count($iccid);$i++){
     $update  = $session->execute("UPDATE sim_cards SET status ='inactive' WHERE (iccid = '".$iccid[$i]['iccid']."')");
     echo "Status updated <br>";
 }
