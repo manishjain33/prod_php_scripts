@@ -20,8 +20,12 @@ for($i=0;$i<=2;$i++){
     foreach($result as $row)
     {
         $imei= $row['imei'];
+        $tid= $row['trackerid'];
+        $org= $row['orgid'];
+        echo "imei - ".$imei." trackerid - ". $tid . " org - " . $org;
+        die();
         foreach ($row['userid'] as $followed) {
-            $update=$session->execute("update trackers_by_userid")
+            //$update=$session->execute("update trackers_by_userid set ")
         }
     }
 }
