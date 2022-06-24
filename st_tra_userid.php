@@ -16,16 +16,17 @@ while ($orgRow = mysqli_fetch_assoc($orgQuery_result))
 }
 //for($i=0;$i<=count($trackers);$i++){
 for($i=0;$i<=2;$i++){
-    $result  = $session->execute("SELECT * FROM trackers_by_trackerid WHERE (trackerid =".$trackers[$i]['tid']." );");
+    $tracker="50d0ef00-31e2-11e8-ac55-6cc3e8965b3a";
+    //$result  = $session->execute("SELECT * FROM trackers_by_trackerid WHERE (trackerid =".$trackers[$i]['tid']." );");
+    $result  = $session->execute("SELECT * FROM trackers_by_trackerid WHERE (trackerid =".$tracker." );");
     foreach($result as $row)
     {
         $imei= $row['imei'];
         $tid= $row['trackerid'];
         $org= $row['orgid'];
         echo "imei - ".$imei." trackerid - ". $tid . " org - " . $org;
-        die();
         foreach ($row['userid'] as $followed) {
-            //$update=$session->execute("update trackers_by_userid set ")
+            $update=$session->execute("update trackers_by_userid set is_deleted=1 where orgid=".$org.", userid=".$followed.", trackerid=".$tid);
         }
     }
 }
