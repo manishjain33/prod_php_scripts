@@ -6,7 +6,7 @@ $result  = $session->execute("SELECT * FROM organizations where name='".$org."' 
 foreach ($result as $row) {
     $orgid= $row['id'];
     $vendorid=$row['vendorid'];
-    $vendorQ  = $session->execute("SELECT * FROM users_by_userid where userid='".$vendorid);
+    $vendorQ  = $session->execute("SELECT * FROM users_by_userid where userid=".$vendorid);
     foreach ($vendorQ as $rowQ) {
         $vendorname=$rowQ['company'];
     }
