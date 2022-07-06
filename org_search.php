@@ -10,7 +10,7 @@ foreach ($result as $row) {
     foreach ($vendorQ as $rowQ) {
         $vendorname=$rowQ['company'];
     }
-    $finaldata[]=array("orgid"=>$orgid,"vendor"=>$vendorid,"vendor_name"=>$vendorname);
+    $finaldata=array("orgid"=>$orgid,"vendor"=>$vendorid,"vendor_name"=>$vendorname);
 }
-print_r ($finaldata);
+echo json_encode ($finaldata);
 ?>
