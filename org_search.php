@@ -13,6 +13,4 @@ foreach ($result as $row) {
     $finaldata[]=array("orgid"=>$orgid,"vendor"=>$vendorid,"vendor_name"=>$vendorname);
 }
 echo json_encode ($finaldata);
-echo "<br>";
-print_r($finaldata);
 ?>
