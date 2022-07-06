@@ -1,7 +1,7 @@
 <?php
 include('connProd.php') ;
-//$org=$_GET["org"];
-$org="ABAWI EXOTIC CAR RENTAL";
+$org=$_GET["org"];
+//$org="ABAWI EXOTIC CAR RENTAL";
 $result  = $session->execute("SELECT * FROM organizations where name='".$org."' ALLOW FILTERING");
 foreach ($result as $row) {
     $orgid= $row['id'];
