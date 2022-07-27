@@ -2,7 +2,7 @@
 include('connProd.php') ;
 //$imei=$_GET['imei'];
 $imei=866907057592486;
-$result  = $session->execute("SELECT * FROM trackers_by_imei where imei=".$imei);
+$result  = $session->execute("SELECT * FROM trackers_by_imei where imei='".$imei."'");
 foreach ($result as $row) {
     $catagory=$row['foa_type'];
     $orgId=$row['orgid'];
