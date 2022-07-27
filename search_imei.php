@@ -1,7 +1,6 @@
 <?php
 include('connProd.php') ;
-//$imei=$_GET['imei'];
-$imei=866907057592486;
+$imei=$_GET['imei'];
 $result  = $session->execute("SELECT * FROM trackers_by_imei where imei='".$imei."'");
 foreach ($result as $row) {
     $catagory=$row['foa_type'];
