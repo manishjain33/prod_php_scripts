@@ -2,7 +2,7 @@
 include('connProd.php') ;
 $username = "dps";
 $password = "dps123";
-$hostname = "securepath.ae";  
+$hostname = "172.16.1.4";  
 $dbhandle = mysqli_connect($hostname, $username, $password) ;
 $selected = mysqli_select_db($dbhandle,'dubai') ;
 if($dbhandle->connect_errno > 0){
