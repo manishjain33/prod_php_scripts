@@ -7,6 +7,7 @@ foreach ($result as $row) {
     $orgId=$row['orgid'];
     $simNumber=$row['sim_number'];
     $model=$row['tracker_model'];
+    $tid= $row['trackerid'];
 }
 $org  = $session->execute("SELECT * FROM organizations where id=".$orgId);
 foreach ($org as $orgrow) {
@@ -17,6 +18,6 @@ $vendQuery  = $session->execute("SELECT * FROM users_by_userid where userid=".$v
 foreach ($vendQuery as $venrow){
     $vendor= $venrow['company'];
 }
-$res=array("vendor_name"=>$vendor,"orgid"=>$orgId,"orgname"=>$orgName,"category"=>$catagory,"sim number"=>$simNumber,"model"=>$model);
+$res=array("vendor_name"=>$vendor,"orgid"=>$orgId,"orgname"=>$orgName,"category"=>$catagory,"sim number"=>$simNumber,"model"=>$model,"tracker id"=>$tid);
 echo json_encode($res);
 ?>
