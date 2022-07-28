@@ -19,6 +19,7 @@ for ($i=0;$i<=2;$i++){
     $result  = $session->execute("SELECT * FROM trackers_by_imei where imei='".$simData[$i]["imei"]."'");
     foreach ($result as $row) {
         $tid= $row['trackerid'];
+        $orgid= $row['orgid'];
     }
     $userName="jishi@gredenza.com";
     $aq=array("email"=>$userName,"password"=>"Ql1Z48ENk%8ER7Q9h7ChxP65BPT%");
@@ -53,12 +54,11 @@ for ($i=0;$i<=2;$i++){
     echo "start time - ".date('h:i:s') . "<br>";
     $curl = curl_init();
     $sleep=0;
-    //for ($a=0;$a<10;$a++){
     $password="12345";
     $postQ=array("simProvider"=> "etisalat","simSerial"=>$simData[$i]["ICCID"],"trackerid"=> $tid,"simNumber"=>$simData[$i]["imei"]);
     $postFields=json_encode($postQ);
     curl_setopt_array($curl, array(
-        CURLOPT_URL => 'http://172.16.1.28:8888/api/organization/'.$trackerData[$a]["orgid"].'/trackers/'.$tid,
+        CURLOPT_URL => 'http://172.16.1.28:8888/api/organization/'.$orgid.'/trackers/'.$tid,
         CURLOPT_RETURNTRANSFER => true,
         CURLOPT_ENCODING => '',
         CURLOPT_MAXREDIRS => 10,
