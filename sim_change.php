@@ -10,8 +10,7 @@ foreach ($result as $row) {
     $tid= $row['trackerid'];
     $orgid= $row['orgid'];
 }
-$userName="jishi@gredenza.com";
-$aq=array("email"=>$userName,"password"=>"Ql1Z48ENk%8ER7Q9h7ChxP65BPT%");
+$aq=array("email"=>$vendor,"password"=>"Ql1Z48ENk%8ER7Q9h7ChxP65BPT%");
 $query=json_encode($aq);
 $curl = curl_init();
 curl_setopt_array($curl, array(
@@ -34,12 +33,8 @@ $err = curl_error($curl);
 
 $token = json_decode($token);
 $token=$token->token;
-print_r($token);
-//$_SESSION[$userName]=$token;
+//print_r($token);
 curl_close($curl);
-
-//print_r($_SESSION);
-//die();
 $curl = curl_init();
 $password="12345";
 $postQ=array("simProvider"=> "etisalat","simSerial"=>$iccid,"trackerid"=> $tid,"simNumber"=>$simno);
@@ -64,7 +59,7 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $err= curl_error($curl);
 curl_close($curl);
-echo $response;
+//echo $response;
 $rep=json_decode($response);
 if($rep->error_code!="unauthorized_access"){
     $update  = $session->execute("UPDATE sim_cards SET status = 'active' WHERE (iccid = '".$iccid."')");
