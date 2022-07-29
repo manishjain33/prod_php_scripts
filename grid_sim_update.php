@@ -77,11 +77,11 @@ for ($i=0;$i<=3;$i++){
     $response = curl_exec($curl);
     $err= curl_error($curl);
     echo $a." -- ";
-    echo $response->error_code;
-    if($response->error_code!="unauthorized_access"){
-        $update  = $session->execute("UPDATE sim_cards SET status ='".$status."' WHERE (iccid = '".$row['iccid']."')");
-        echo "Status updated <br>";
-    }
+    echo $response;
+    // if($response->error_code!="unauthorized_access"){
+    //     $update  = $session->execute("UPDATE sim_cards SET status ='".$status."' WHERE (iccid = '".$row['iccid']."')");
+    //     echo "Status updated <br>";
+    // }
     print_r($tid);
     echo "<br>";
     if($sleep==10){
