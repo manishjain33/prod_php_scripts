@@ -14,8 +14,8 @@ while ($simRow = mysqli_fetch_assoc($simQuery_result))
 {
   $simData[]=$simRow;
 }
-for ($i=0;$i<=count($simData);$i++){
-//for ($i=0;$i<=3;$i++){
+//for ($i=0;$i<=count($simData);$i++){
+for ($i=0;$i<=3;$i++){
     $result  = $session->execute("SELECT * FROM trackers_by_imei where imei='".$simData[$i]["imei"]."'");
     foreach ($result as $row) {
         $tid= $row['trackerid'];
@@ -78,6 +78,10 @@ for ($i=0;$i<=count($simData);$i++){
     $err= curl_error($curl);
     echo $a." -- ";
     echo $response;
+    if($response->error_code!="unauthorized_access"){
+        $update  = $session->execute("UPDATE sim_cards SET status ='".$status."' WHERE (iccid = '".$row['iccid']."')");
+        echo "Status updated <br>";
+    }
     print_r($tid);
     echo "<br>";
     if($sleep==10){
