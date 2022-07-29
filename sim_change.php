@@ -64,13 +64,9 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $err= curl_error($curl);
 curl_close($curl);
-echo $a." -- ";
-echo $response."<br>";
 $rep=json_decode($response);
 if($rep->error_code!="unauthorized_access"){
     $update  = $session->execute("UPDATE sim_cards SET status = 'active' WHERE (iccid = '".$iccid."')");
-    echo "Status updated <br>";
-
     $curl = curl_init();
     curl_setopt_array($curl, array(
         CURLOPT_URL => 'https://restapi4.jasper.ae/rws/api/v1/devices/'.$iccid,
@@ -92,6 +88,7 @@ if($rep->error_code!="unauthorized_access"){
         ));
     
         $response = curl_exec($curl);
-        //echo $response."<br>";
+        echo $response;
+        curl_close($curl);
 }
 ?>
