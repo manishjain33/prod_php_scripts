@@ -18,7 +18,7 @@ while ($trackersRow = mysqli_fetch_assoc($trackers_result))
 //for ($i=0;$i<=count($trackersData);$i++){
 for ($i=0;$i<=2;$i++){
   print_r($trackersData[$i]["tid"]);
-  $result  = $session->execute("select * from trackers_by_trackerid='".$trackersData[$i]["tid"]."'");
+  $result  = $session->execute("select * from trackers_by_trackerid=".$trackersData[$i]["tid"]);
   foreach ($result as $row) {
       print_r($row);
   }
