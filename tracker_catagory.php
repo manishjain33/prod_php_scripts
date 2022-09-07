@@ -22,6 +22,6 @@ for ($i=0;$i<=2;$i++){
       $catagory[]=$row['foa_type'];
   }
 }
-print_r($catagory);
-//print_r(array_count_values($catagory));
+//print_r($catagory);
+print_r(array_count_values($catagory));
 ?>
