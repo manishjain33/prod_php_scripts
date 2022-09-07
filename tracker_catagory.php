@@ -12,7 +12,6 @@ $trackers = "select * from tid1";
 $trackers_result = mysqli_query($dbhandle, $trackers);
 while ($trackersRow = mysqli_fetch_assoc($trackers_result))
   {
-    echo $trackersRow;
     $trackersData[]=$trackersRow;
   }
 print_r($trackersData);
