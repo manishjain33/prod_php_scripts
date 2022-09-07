@@ -15,13 +15,13 @@ while ($trackersRow = mysqli_fetch_assoc($trackers_result))
     $trackersData[]=$trackersRow;
   }
 //print_r($trackersData);
-//for ($i=0;$i<=count($trackersData);$i++){
-for ($i=0;$i<=2;$i++){
+for ($i=0;$i<=count($trackersData);$i++){
+//for ($i=0;$i<=2;$i++){
   print_r($trackersData[$i]["tid"]);
   $result  = $session->execute("select * from trackers_by_trackerid where trackerid=".$trackersData[$i]["tid"]);
   foreach ($result as $row) {
       $catagory[]=$row["foa_type"];
   }
-  print_r(array_count_values($catagory));
 }
+print_r(array_count_values($catagory));
 ?>
