@@ -20,7 +20,8 @@ for ($i=0;$i<=2;$i++){
   print_r($trackersData[$i]["tid"]);
   $result  = $session->execute("select * from trackers_by_trackerid where trackerid=".$trackersData[$i]["tid"]);
   foreach ($result as $row) {
-      print_r($row);
+      $catagory[]=$row["foa_type"];
+      print_r(array_count_values($catagory[]));
   }
 }
 ?>
