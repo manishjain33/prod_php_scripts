@@ -10,10 +10,11 @@ if($dbhandle->connect_errno > 0){
 }
 $trackers = "select * from tid1";
 $trackers_result = mysqli_query($dbhandle, $trackers);
-while ($simRow = mysqli_fetch_assoc($trackers_result))
-{
-  $trackersData[]=$trackersRow;
-}
+while ($trackersRow = mysqli_fetch_assoc($trackers_result))
+  {
+    echo $trackersRow;
+    $trackersData[]=$trackersRow;
+  }
 print_r($trackersData);
 for ($i=0;$i<=count($trackersData);$i++){
     $result  = $session->execute("select * from trackers_by_trackerid='".$trackersData[$i]["tid"]."'");
