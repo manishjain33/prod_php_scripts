@@ -22,7 +22,7 @@ for ($i=0;$i<=count($trackersData);$i++){
   $result  = $session->execute("select * from vehicles_by_vehicleid where trackerid=".$trackersData[$i]["tid"]." allow filtering");
   foreach ($result as $row) {
       $chassis[]=$row['chasis_number'];
-      echo "<td>".$trackersData[$i]["tid"]."</td><td>".$row['chasis_number']. "</td><td>".$trackersData[$i]["user"]."</td><td>".$trackersData[$i]["type"]."</td><td>".$trackersData[$i]["created"]."</td></tr>";
+      echo "<td>".$trackersData[$i]["tid"]."</td><td>".$row['chasis_number']."</td><td>". $row['category']. "</td><td>".$trackersData[$i]["user"]."</td><td>".$trackersData[$i]["type"]."</td><td>".$trackersData[$i]["created"]."</td></tr>";
   }
 
 }
