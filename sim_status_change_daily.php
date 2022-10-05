@@ -27,7 +27,7 @@ echo "<br>".count($sim_array)."<br>";
 print_r($sim_array[0]);
 $totsim=$session->execute("select * from sim_cards");
 foreach ($totsim as $simrows){
-  $totsim[]=$simrows['sim_serial'];
+  $totsim[]=$simrows;
 }
 echo "<br>";
 print_r($totsim[0]);
