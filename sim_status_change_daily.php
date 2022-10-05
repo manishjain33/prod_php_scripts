@@ -5,7 +5,7 @@ $future  = $session->executeAsync("SELECT * FROM trackers_by_imei",$options);
 $result = $future->get();
 
 while(true){
-  echo "entries in page: " . $result->count() . "<br><br>\n\n";
+  //echo "entries in page: " . $result->count() . "<br><br>\n\n";
   foreach ($result as $row) {
     if($row['trackerid']!=''&& $row['is_deleted']==0 && $row['sim_serial']!=''){
       //print_r($row['sim_serial']);
@@ -25,4 +25,10 @@ while(true){
 }
 echo "<br>".count($sim_array)."<br>";
 print_r($sim_array[0]);
+$totsim=$session->execute("select * from sim_cards");
+foreach ($totsim as $simrows){
+  $totsim[]=$simrows['sim_serial'];
+}
+echo "<br>";
+print_r($totsim[0]);
 ?>
