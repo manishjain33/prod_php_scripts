@@ -27,7 +27,7 @@ while(true){
 //print_r($sim_array[0]);
 $totsim=$session->execute("select * from sim_cards");
 foreach ($totsim as $simrows){
-  $totsim[]=$simrows['msisdn'];
+  $totsim[]=$simrows;
 }
 //echo "<br>";
 //print_r($totsim[0]);
