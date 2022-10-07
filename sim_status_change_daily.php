@@ -27,10 +27,14 @@ while(true){
 //print_r($sim_array[0]);
 $totsim=$session->execute("select * from sim_cards");
 foreach ($totsim as $simrows){
-  print_r($simrows['msisdn']);
-  echo"<br>";
   $totsim[]=$simrows['msisdn'];
 }
-echo "<br>";
-print_r($totsim[0]);
+//echo "<br>";
+//print_r($totsim[0]);
+for ($i=0;$i<count($totsim);$i++){
+  $msisdn=$totsim[$i]['msisdn'];
+  if(arrray_search($msisdn,$sim_array)){
+    echo "sim Found /n";
+  }
+}
 ?>
