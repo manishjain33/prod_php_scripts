@@ -23,11 +23,13 @@ while(true){
   if ($result->isLastPage()){ break; }
   $result=$result->nextPage();
 }
-echo "<br>".count($sim_array)."<br>";
-print_r($sim_array[0]);
+//echo "<br>".count($sim_array)."<br>";
+//print_r($sim_array[0]);
 $totsim=$session->execute("select * from sim_cards");
 foreach ($totsim as $simrows){
-  $totsim[]=$simrows["msisdn"];
+  print_r($simrows['msisdn']);
+  echo"<br>";
+  $totsim[]=$simrows['msisdn'];
 }
 echo "<br>";
 print_r($totsim[0]);
