@@ -23,7 +23,7 @@ while(true){
   if ($result->isLastPage()){ break; }
   $result=$result->nextPage();
 }
-//echo "<br>".count($sim_array)."<br>";
+echo "<br>".count($sim_array)."<br>";
 //print_r($sim_array[0]);
 $totsim=$session->execute("select * from sim_cards");
 foreach ($totsim as $simrows){
@@ -33,7 +33,7 @@ foreach ($totsim as $simrows){
 //print_r($totsim[0]);
 for ($i=0;$i<=count($totsimarr);$i++){
   $msisdn=$totsim[$i]['msisdn'];
-  echo $msisdn."<br>/n";
+  //echo $msisdn."<br>/n";
   if(array_search($msisdn,$sim_array)){
     echo "sim Found /n";
   }
