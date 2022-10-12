@@ -33,6 +33,7 @@ foreach ($totsim as $simrows){
 //print_r($totsim[0]);
 for ($i=0;$i<=count($totsimarr);$i++){
   $msisdn=$totsim[$i]['msisdn'];
+  echo $msisdn."<br>/n";
   if(array_search($msisdn,$sim_array)){
     echo "sim Found /n";
   }
