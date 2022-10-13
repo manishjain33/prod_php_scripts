@@ -33,10 +33,14 @@ foreach ($totsim as $simrows){
 //print_r($totsim[0]);
 for ($i=0;$i<=count($totsimarr);$i++){
   $msisdn=$totsim[$i]['msisdn'];
-  //echo $msisdn."<br>/n";
+  echo "MSISDN ".$msisdn."<br> /n";
+  echo "sim array ".$sim_array[$i] "<br> /n";
   $searchresult=array_search($msisdn,$sim_array);
+  echo $searchresult."<br> /n";
   if($searchresult!== false){
     echo "sim Found /n";
+  }else{
+    echo "sim not found /n";
   }
 }
 ?>
