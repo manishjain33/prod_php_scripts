@@ -27,7 +27,7 @@ foreach ($totsim as $simrows){
   $searchresult=array_search($iccid,$sim_array);
   //echo $searchresult."<br> /n";
   if($searchresult!== false){
-    simfound[]=$iccid;
+    $simfound[]=$iccid;
   }else{
     $notfound[]=$iccid;
     echo $iccid;
