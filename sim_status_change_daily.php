@@ -10,37 +10,31 @@ while(true){
     if($row['trackerid']!=''&& $row['is_deleted']==0 && $row['sim_serial']!=''){
       //print_r($row['sim_serial']);
       //echo "<br> select * from sim_cards where iccid=".$row['sim_serial'];
-      $simstatus=$session->execute("select * from sim_cards where iccid='".$row['sim_serial']."'");
-      foreach ($simstatus as $rows){
-        // echo "\n";
-        // print_r($row['sim_serial']);
-        // echo" - ";
-        // print_r($rows['status']);
-        $sim_array[]=$rows;
-      }
+      $sim_array[]=$rows$row['sim_serial'];
     }
   }
   if ($result->isLastPage()){ break; }
   $result=$result->nextPage();
 }
-//echo "<br>".count($sim_array)."<br>";
-//print_r($sim_array[0]);
-$totsim=$session->execute("select * from sim_cards");
-foreach ($totsim as $simrows){
-  $totsimarr[]=$simrows;
-}
-//echo "<br>";
-//print_r($totsim[0]);
-for ($i=0;$i<=count($totsimarr);$i++){
-  $msisdn=$totsim[$i]['msisdn'];
-  echo "MSISDN ".$msisdn."<br> /n";
-  echo "sim array ".$sim_array[$i]."<br> /n";
-  $searchresult=array_search($msisdn,$sim_array);
-  echo $searchresult."<br> /n";
-  if($searchresult!== false){
-    echo "sim Found /n";
-  }else{
-    echo "sim not found /n";
-  }
-}
+
+echo "<br>".count($sim_array)."<br>";
+print_r($sim_array[0]);
+// $totsim=$session->execute("select * from sim_cards");
+// foreach ($totsim as $simrows){
+//   $totsimarr[]=$simrows;
+// }
+// //echo "<br>";
+// //print_r($totsim[0]);
+// for ($i=0;$i<=count($totsimarr);$i++){
+//   $msisdn=$totsim[$i]['msisdn'];
+//   echo "MSISDN ".$msisdn."<br> /n";
+//   echo "sim array ".$sim_array[$i]."<br> /n";
+//   $searchresult=array_search($msisdn,$sim_array);
+//   echo $searchresult."<br> /n";
+//   if($searchresult!== false){
+//     echo "sim Found /n";
+//   }else{
+//     echo "sim not found /n";
+//   }
+// }
 ?>
