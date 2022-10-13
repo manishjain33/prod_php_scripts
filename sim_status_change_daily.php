@@ -23,14 +23,14 @@ foreach ($totsim as $simrows){
 }
  for ($i=0;$i<=count($totsimarr);$i++){
    $iccid=$totsimarr[$i]['iccid'];
-  echo "iccid ".$iccid."<br> /n";
+  //echo "iccid ".$iccid."<br> /n";
   $searchresult=array_search($iccid,$sim_array);
-  echo $searchresult."<br> /n";
+  //echo $searchresult."<br> /n";
   if($searchresult!== false){
     echo "sim Found /n <br>";
   }else{
-    echo "sim not found /n <br>";
+    $notfound[]=$iccid;
   }
 }
-print_r ($sim_array);
+print_r ($notfound);
 ?>
