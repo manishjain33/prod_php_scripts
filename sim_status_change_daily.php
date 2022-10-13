@@ -30,8 +30,9 @@ foreach ($totsim as $simrows){
     echo "sim Found /n <br>";
   }else{
     $notfound[]=$iccid;
-    $update  = $session->execute("UPDATE sim_cards SET status ='inactive' WHERE (iccid = '".$iccid."')");
+    echo $iccid;
+    //$update  = $session->execute("UPDATE sim_cards SET status ='inactive' WHERE (iccid = '".$iccid."')");
   }
 }
-print_r ($notfound);
+//print_r ($notfound);
 ?>
