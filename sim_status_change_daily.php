@@ -10,7 +10,7 @@ while(true){
     if($row['trackerid']!=''&& $row['is_deleted']==0 && $row['sim_serial']!=''){
       //print_r($row['sim_serial']);
       //echo "<br> select * from sim_cards where iccid=".$row['sim_serial'];
-      $sim_array[]=$rows$row['sim_serial'];
+      $sim_array[]=$row['sim_serial'];
     }
   }
   if ($result->isLastPage()){ break; }
