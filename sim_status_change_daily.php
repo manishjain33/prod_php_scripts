@@ -23,8 +23,8 @@ foreach ($totsim as $simrows){
 }
  for ($i=0;$i<=count($totsimarr);$i++){
    $iccid=$totsimarr[$i]['iccid'];
-  echo "MSISDN ".$msisdn."<br> /n";
-  $searchresult=array_search($msisdn,$sim_array);
+  echo "iccid ".$iccid."<br> /n";
+  $searchresult=array_search($iccid,$sim_array);
   echo $searchresult."<br> /n";
   if($searchresult!== false){
     echo "sim Found /n <br>";
