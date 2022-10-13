@@ -27,12 +27,14 @@ foreach ($totsim as $simrows){
   $searchresult=array_search($iccid,$sim_array);
   //echo $searchresult."<br> /n";
   if($searchresult!== false){
-    echo "sim Found /n <br>";
+    simfound[]=$iccid;
   }else{
     $notfound[]=$iccid;
     echo $iccid;
-    //$update  = $session->execute("UPDATE sim_cards SET status ='inactive' WHERE (iccid = '".$iccid."')");
+    $update  = $session->execute("UPDATE sim_cards SET status ='inactive' WHERE (iccid = '".$iccid."')");
+    echo " - updated <br> /n"
   }
 }
+
 //print_r ($notfound);
 ?>
