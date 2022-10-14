@@ -38,5 +38,5 @@ foreach ($totsim as $simrows){
   }
 }
 
-//print_r ($notfound);
+print_r ($notfound);
 ?>
