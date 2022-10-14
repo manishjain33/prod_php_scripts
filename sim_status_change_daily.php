@@ -30,7 +30,9 @@ foreach ($totsim as $simrows){
     $simfound[]=$iccid;
   }else{
     $notfound[]=$iccid;
-    echo $iccid;
+    //echo $iccid;
+    echo ("UPDATE sim_cards SET status ='inactive' WHERE (iccid = '".$totsimarr[$i]['iccid']."')");
+    echo "<br>";
     $update  = $session->execute("UPDATE sim_cards SET status ='inactive' WHERE (iccid = '".$totsimarr[$i]['iccid']."')");
     echo " - updated <br> /n";
   }
