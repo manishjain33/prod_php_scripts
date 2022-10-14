@@ -5,7 +5,6 @@ $future  = $session->executeAsync("SELECT * FROM trackers_by_imei",$options);
 $result = $future->get();
 
 while(true){
-  //echo "entries in page: " . $result->count() . "<br><br>\n\n";
   foreach ($result as $row) {
     if($row['trackerid']!=''&& $row['is_deleted']==0 && $row['sim_serial']!=''){
       $sim_array[]=$row['sim_serial'];
@@ -14,29 +13,20 @@ while(true){
   if ($result->isLastPage()){ break; }
   $result=$result->nextPage();
 }
-
-//echo "<br>".count($sim_array)."<br>";
-//print_r($sim_array[0]);
 $totsim=$session->execute("select * from sim_cards");
 foreach ($totsim as $simrows){
   $totsimarr[]=$simrows;
 }
  for ($i=0;$i<=count($totsimarr);$i++){
    $iccid=$totsimarr[$i]['iccid'];
-  //echo "iccid ".$iccid."<br> /n";
   $searchresult=array_search($iccid,$sim_array);
-  //echo $searchresult."<br> /n";
   if($searchresult!== false){
     $simfound[]=$iccid;
   }else{
-    $notfound[]=$iccid;
-    //echo $iccid;
-    echo ("UPDATE sim_cards SET status ='inactive' WHERE (iccid = '".$totsimarr[$i]['iccid']."')");
-    echo "<br> /n";
+    echo "Iccid - ";
+    print_r($totsimarr[$i]['iccid']);
     $update  = $session->execute("UPDATE sim_cards SET status ='inactive' WHERE (iccid = '".$totsimarr[$i]['iccid']."')");
     echo " - updated <br> /n";
   }
 }
-
-print_r ($notfound);
 ?>
