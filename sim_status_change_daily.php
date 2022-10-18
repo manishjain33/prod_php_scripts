@@ -22,7 +22,7 @@ foreach ($totsim as $simrows){
   $searchresult=array_search($iccid,$sim_array);
   if($searchresult!== false){
     $simfound[]=$iccid;
-  }else if ($totsimarr[$i]['status']!="inactive"){
+  }elseif ($totsimarr[$i]['status']!="inactive"){
     $update  = $session->execute("UPDATE sim_cards SET status ='inactive' WHERE (iccid = '".$totsimarr[$i]['iccid']."')");
     echo " - updated <br> /n";
   }
