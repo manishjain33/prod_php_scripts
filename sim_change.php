@@ -33,7 +33,7 @@ $err = curl_error($curl);
 
 $token = json_decode($token);
 $token=$token->token;
-//print_r($token);
+print_r($token);
 curl_close($curl);
 $curl = curl_init();
 $password="12345";
@@ -59,7 +59,7 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 $err= curl_error($curl);
 curl_close($curl);
-echo $response;
+//echo $response;
 $rep=json_decode($response);
 if($rep->error_code!="unauthorized_access"){
     $update  = $session->execute("UPDATE sim_cards SET status = 'active' WHERE (iccid = '".$iccid."')");
@@ -86,5 +86,7 @@ if($rep->error_code!="unauthorized_access"){
         $response = curl_exec($curl);
         echo $response;
         curl_close($curl);
+}else {
+    echo $rep->error_code;
 }
 ?>
