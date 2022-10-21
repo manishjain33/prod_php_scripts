@@ -60,8 +60,8 @@ $response_sim = curl_exec($curl);
 $err= curl_error($curl);
 curl_close($curl);
 echo $response_sim;
+echo $err;
 $rep=json_decode($response_sim);
-echo $postFields;
 die();
 if($rep->error_code!="unauthorized_access"){
     $update  = $session->execute("UPDATE sim_cards SET status = 'active' WHERE (iccid = '".$iccid."')");
