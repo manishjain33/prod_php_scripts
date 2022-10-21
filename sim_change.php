@@ -33,7 +33,7 @@ $err = curl_error($curl);
 
 $token = json_decode($token);
 $token=$token->token;
-//print_r($token);
+print_r($token);
 curl_close($curl);
 $cxurl = curl_init();
 $password="12345";
