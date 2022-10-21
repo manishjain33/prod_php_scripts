@@ -33,9 +33,9 @@ $err = curl_error($curl);
 
 $token = json_decode($token);
 $token=$token->token;
-print_r($token);
+//print_r($token);
 curl_close($curl);
-$cxurl = curl_init();
+$curl = curl_init();
 $password="12345";
 $postQ=array("simProvider"=> "etisalat","simSerial"=>$iccid,"trackerid"=> $tid,"simNumber"=>$simno);
 $postFields=json_encode($postQ);
