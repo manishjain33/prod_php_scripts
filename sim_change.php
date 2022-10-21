@@ -61,7 +61,7 @@ $err= curl_error($curl);
 curl_close($curl);
 //echo $response_sim;
 $rep=json_decode($response_sim);
-echo $rep;
+echo 'http://172.16.1.28:8888/api/organization/'.$orgid.'/trackers/'.$tid;
 die();
 if($rep->error_code!="unauthorized_access"){
     $update  = $session->execute("UPDATE sim_cards SET status = 'active' WHERE (iccid = '".$iccid."')");
