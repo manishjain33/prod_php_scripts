@@ -15,6 +15,8 @@ while ($trackersRow = mysqli_fetch_assoc($trackers_result))
     $trackersData[]=$trackersRow;
   }
 //print_r($trackersData);
+echo strtotime($trackersData[$i]["created"]);
+die();
 echo "<table>";
 for ($i=0;$i<=count($trackersData);$i++){
 //for ($i=0;$i<=3;$i++){
