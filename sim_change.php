@@ -62,7 +62,7 @@ curl_close($curl);
 //echo $response_sim;
 //echo $err;
 $rep=json_decode($response_sim);
-if($rep->error_code!="unauthorized_access" || $response_sim!= "Internal Server Error"){
+if($rep->error_code!="unauthorized_access" && $response_sim!= "Internal Server Error"){
     $update  = $session->execute("UPDATE sim_cards SET status = 'active' WHERE (iccid = '".$iccid."')");
     $curl = curl_init();
     curl_setopt_array($curl, array(
