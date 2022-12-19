@@ -88,6 +88,6 @@ if($rep->error_code!="unauthorized_access" && $response_sim!= "Internal Server E
         echo $response;
         curl_close($curl);
 }else {
-    echo $rep->error_code ." Not updated";
+    echo $rep->error_code ." or IMEI not present";
 }
 ?>
