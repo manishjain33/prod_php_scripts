@@ -35,16 +35,12 @@ for ($a=0;$a<=count($tidData);$a++){
           "alert": true,
           "autorespond": true,
           "source": "API",
-          "name": "$tidData[$a]["vendor"]",
-          "email": "$tidData[$a]["email"]",
+          "name": "'.$tidData[$a]["vendor"].'",
+          "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
           "subject": "Testing API",
           "ip": "91.73.131.78",
-          "message": "data:text/html,Dear Customer,<br>
-
-          As per our verification, the tracker is not sending proper data to the SecurePath server please download the correct configuration from the support & reconfigure the unit. We have noticed that you are still pointing the data of vehicles under different IP and also not using the approved configuration share from our end. This will be subject to penalty/ suspension/ termination from Securepath without any further notice.
-          <br>
-          Reconfigure all units available at your end & get back to us. "
+          "message": "data:text/html,Dear Customer,<br>As per our verification, the tracker is not sending proper data to the SecurePath server please download the correct configuration from the support & reconfigure the unit. We have noticed that you are still pointing the data of vehicles under different IP and also not using the approved configuration share from our end. This will be subject to penalty/ suspension/ termination from Securepath without any further notice.<br>Reconfigure all units available at your end & get back to us. "
       }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
