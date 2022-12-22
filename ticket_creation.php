@@ -10,9 +10,15 @@ if($dbhandle->connect_errno > 0)
     {
         die('Unable to connect to database' . $dbhandle->connect_error);
     }
-$sql = "SELECT * from support";
+$sql = "SELECT * from supportCopy";
 
-
+$result = mysqli_query($dbhandle,$sql);
+while ($trackerid = mysqli_fetch_assoc($result))
+{
+  $tidData[]=$trackerid;
+}
+mysqli_close($dbhandle);
+die();
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
