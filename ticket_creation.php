@@ -18,6 +18,7 @@ while ($trackerid = mysqli_fetch_assoc($result))
   $tidData[]=$trackerid;
 }
 mysqli_close($dbhandle);
+print_r($tidData);
 die();
 $curl = curl_init();
 
