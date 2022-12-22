@@ -50,8 +50,9 @@ for ($a=0;$a<=count($tidData);$a++){
       ));
       
       $response = curl_exec($curl);
-      
+      $err=curl_error($curl);
       curl_close($curl);
       echo $response." - ".$tidData[$a]["vendor"]."<br>";
+      echo $err."<br>";
 }
 ?>
