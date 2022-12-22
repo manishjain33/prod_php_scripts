@@ -47,7 +47,7 @@ for ($a=0;$a<=count($tidData);$a++){
           Reconfigure all units available at your end & get back to us. "
       }',
         CURLOPT_HTTPHEADER => array(
-          'x-api-key: F698568B6E5F7AA32DB2F0EED3D0896F',
+          'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
           'Content-Type: application/json',
           'Cookie: OSTSESSID=hmul6hied727fkigmom4ntn767'
         ),
