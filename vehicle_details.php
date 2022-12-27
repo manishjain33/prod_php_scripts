@@ -26,4 +26,5 @@ for ($i=0;$i<=count($trackersData);$i++){
   }
 
 }
+echo "</table>";
 ?>
