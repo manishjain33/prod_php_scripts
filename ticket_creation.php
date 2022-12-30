@@ -38,7 +38,7 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "SecurePath license notification",
+          "subject": "Release Notification - Command module !",
           "message": "data:text/html,Dear Customer,<br>This is to let you know that the Command module is currently operational.<br><br>Default Vehicle immobilization and remobilization are available via SecurePath instructions.<br><br>Select the appropriate course of action, then click the "Send command" button. Once the instruction has been sent to the unit, you will see a "Success" message on the panel if there was no error; otherwise, you will see a failure message. You can try sending the message again or get in touch with SecurePath support if it fails.<bnr><br>Immobilize Vehicle - This will put a stop to the car.<br><br>Remobilize  Vehicle - Will start the car after immobilization."
       }',
         CURLOPT_HTTPHEADER => array(
