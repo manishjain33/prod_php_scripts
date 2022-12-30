@@ -39,7 +39,7 @@ for ($a=0;$a<=count($tidData);$a++){
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
           "subject": "SecurePath license notification",
-          "message": "data:text/html,Dear Customer,<br>If devices are installed without the required SecurePath-issued M2M sim cards, 4g units, and allowed configuration, the release/activation of the SecurePath certificate may be revoked immediately and without further warning and subject to penalty. Installation should be prior to activation/ renewal of the SecurePath license.<br>Trackers must be renewed no later than one month after their expiration date in order to continue reporting on the SecurePath platform.<br>After activation, the SecurePath license/ chassis is in a one-to-one relationship with the tracker (4g unit and M2M sim card) and cannot be changed."
+          "message": "data:text/html,Dear Customer,<br>This is to let you know that the Command module is currently operational.<br><br>Default Vehicle immobilization and remobilization are available via SecurePath instructions.<br><br>Select the appropriate course of action, then click the "Send command" button. Once the instruction has been sent to the unit, you will see a "Success" message on the panel if there was no error; otherwise, you will see a failure message. You can try sending the message again or get in touch with SecurePath support if it fails.<bnr><br>Immobilize Vehicle - This will put a stop to the car.<br><br>Remobilize  Vehicle - Will start the car after immobilization."
       }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
