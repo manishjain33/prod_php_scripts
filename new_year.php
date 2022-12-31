@@ -1,5 +1,8 @@
 <?php
 include('connProd.php') ;
+header("refresh: 3");
+echo date('H:i:s Y-m-d');
+echo "<br>";
 $result  = $session->execute("SELECT * FROM new_year_geofence");
 foreach ($result as $row) {
     $trackersData[]=$row;
