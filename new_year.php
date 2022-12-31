@@ -6,7 +6,7 @@ foreach ($result as $row) {
 }
 print_r($data);
 echo "<table>";
-echo "<tr><td>trackerid</td><td>Chassis Number</td><td>Category</td></tr>"
+echo "<tr><td>trackerid</td><td>Chassis Number</td><td>Category</td></tr>";
 for ($i=0;$i<=count($trackersData);$i++){
 //for ($i=0;$i<=3;$i++){
     echo "<tr>";
