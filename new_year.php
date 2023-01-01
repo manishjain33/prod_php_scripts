@@ -7,7 +7,7 @@ $result  = $session->execute("SELECT * FROM new_year_geofence");
 foreach ($result as $row) {
     $trackersData[]=$row;
 }
-print_r($data);
+print_r($trackersData);
 echo "<table>";
 echo "<tr><td>Trackerid</td><td>Chassis Number</td><td>Category</td></tr>";
 for ($i=0;$i<=count($trackersData);$i++){
