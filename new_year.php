@@ -14,9 +14,9 @@ echo "<tr><td>Trackerid</td><td>Chassis Number</td><td>Category</td></tr>";
 for ($i=0;$i<=count($trackersData);$i++){
 //for ($i=0;$i<=3;$i++){
     echo "<tr>";
-  $result  = $session->execute("select * from vehicles_by_vehicleid where trackerid=".$trackersData[$i]." allow filtering");
+  $result  = $session->execute("select * from vehicles_by_vehicleid where trackerid=".$trackersData[$i]["trackerid"]." allow filtering");
   foreach ($result as $row) {
-      echo "<td>".$trackersData[$i]["tid"]."</td><td>".$row['chasis_number']."</td><td>". $row['category']. "</td><td>".$trackersData[$i]["user"]."</td></tr>";
+      echo "<td>".$trackersData[$i]["trackerid"]."</td><td>".$row['chasis_number']."</td><td>". $row['category']. "</td><td>".$trackersData[$i]["user"]."</td></tr>";
   }
 
 }
