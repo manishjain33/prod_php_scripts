@@ -17,7 +17,7 @@ foreach ($result as $row) {
     //     echo 'update trackers_by_userid set sim_number ="'.$simnumber.'" where ("orgid" ='.$org.') and ("userid" ='.$followed.') and ("trackerid"='.$tid.')';
     //     $result_tid= $session->execute('update trackers_by_userid set sim_number ="'.$simnumber.'" where ("orgid" ='.$org.') and ("userid" ='.$followed.') and ("trackerid"='.$tid.')');
     // }
-    die();
+
 }
 //print_r($st)
 
