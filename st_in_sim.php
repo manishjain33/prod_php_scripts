@@ -7,15 +7,15 @@ foreach ($result as $row) {
     $org= $row['orgid'];
     $st=explode("-",$row["imei"]);
     $simnumber=$row["sim_number"]."-".$st[1];
-    //echo $simnumber."<br>/n";
+    echo $simnumber."<br>/n";
     $result_imei= $session->execute("update trackers_by_imei set sim_number='".$simnumber."' where (imei='".$row["imei"]."')");
     $result_tid= $session->execute("update trackers_by_trackerid set sim_number='".$simnumber."' where (trackerid =".$row["trackerid"]." );");
     foreach ($row['userid'] as $followed) {
-        echo "imei - ".$imei." trackerid - ". $tid . " org - " . $org." userid - ". $followed . " simnumber - ".$simnumber."<br>";
+        echo "imei - ".$imei." trackerid - ". $tid . " org - " . $org." userid - ". $followed . " simnumber - ".$simnumber."<br>/n";
         echo 'update trackers_by_userid set sim_number ="'.$simnumber.'" where ("orgid" ='.$org.') and ("userid" ='.$followed.') and ("trackerid"='.$tid.')';
         $result_tid= $session->execute('update trackers_by_userid set sim_number ="'.$simnumber.'" where ("orgid" ='.$org.') and ("userid" ='.$followed.') and ("trackerid"='.$tid.')');
     }
-    print_r($row["imei"]);
+    //print_r($row["imei"]);
     die();
 }
 //print_r($st)
