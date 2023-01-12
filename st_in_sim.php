@@ -1,5 +1,5 @@
 <?php
-include('connProd.php') ;
+//include('connProd.php') ;
 $result  = $session->execute("SELECT * FROM trackers_by_imei where is_deleted = 1 ALLOW FILTERING;");
 foreach ($result as $row) {
     $imei= $row['imei'];
