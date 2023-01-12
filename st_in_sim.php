@@ -2,8 +2,8 @@
 include('connProd.php') ;
 $result  = $session->execute("SELECT * FROM trackers_by_imei where is_deleted = 1 ALLOW FILTERING;");
 foreach ($result as $row) {
-    $st[]=explode("-",$row["imei"]);
-    print_r($st[1][1]);
+    $st=explode("-",$row["imei"]);
+    print_r($st[1]);
     echo"/n";
     $simnumber=$row["sim_number"]."-".$st[1];
     echo $simnumber."<br>/n";
