@@ -5,9 +5,11 @@ foreach ($result as $row) {
     $imei= $row['imei'];
     $tid= $row['trackerid'];
     $org= $row['orgid'];
-    $st=explode("-",$row["imei"]);
+    $st=explode("-",$imei);
+    print_r($st[1]);
+    echo"<br>";
     $simnumber=$row["sim_number"]."-".$st[1];
-    echo $simnumber."<br>/n";
+    echo "imei - ".$imei." trackerid - ". $tid . " org - " . $org." userid - ". $followed . " simnumber - ".$simnumber."<br>/n";
     // $result_imei= $session->execute("update trackers_by_imei set sim_number='".$simnumber."' where (imei='".$row["imei"]."')");
     // $result_tid= $session->execute("update trackers_by_trackerid set sim_number='".$simnumber."' where (trackerid =".$row["trackerid"]." );");
     // foreach ($row['userid'] as $followed) {
