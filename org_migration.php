@@ -4,7 +4,7 @@ $curl = curl_init();
 for ($a=0;$a<=1;$a++){
 //for ($a=0;$a<=count($imeis);$a++){
     $password="12345";
-    $postQ=array("imei"=>$imeis[$a], "orgid"=>"46600f80-93ce-11ed-b2a6-5eaf4fc5dad2");
+    $postQ=array("imei"=>"$imeis[$a]", "orgid"=>"46600f80-93ce-11ed-b2a6-5eaf4fc5dad2");
     $postFields=json_encode($postQ);
     echo $postFields."<br>";
     curl_setopt_array($curl, array(
