@@ -6,7 +6,7 @@ for ($a=0;$a<=1;$a++){
     $password="12345";
     $postQ=array("imei"=>$imeis[$a], "orgid"=>"46600f80-93ce-11ed-b2a6-5eaf4fc5dad2");
     $postFields=json_encode($postQ);
-
+    echo $postFields."<br>";
     curl_setopt_array($curl, array(
       CURLOPT_URL => 'http://172.16.1.28:8888/api/vendor/trackers/organization/change',
       CURLOPT_RETURNTRANSFER => true,
