@@ -26,7 +26,8 @@ for ($b=0;$b<=1;$b++){
         $result_tid= $session->execute("update trackers_by_trackerid set sim_serial='".$iccid."' where (trackerid =".$tid." );");
         foreach ($row['userid'] as $followed) {
             echo "imei - ".$imei." trackerid - ". $tid . " org - " . $org." userid - ". $followed . " iccid - ".$iccid."<br><br>";
-            $result_tid= $session->execute("update trackers_by_userid set sim_serial ='".$iccid."' where (orgid =".$org.") and (userid =".$followed.") and (trackerid=".$tid.")");
+            echo "update trackers_by_userid set sim_serial ='".$iccid."' where (orgid =".$org.") and (userid =".$followed.") and (trackerid=".$tid.")";
+            $result_uid= $session->execute("update trackers_by_userid set sim_serial ='".$iccid."' where (orgid =".$org.") and (userid =".$followed.") and (trackerid=".$tid.")");
         }
     }
 }
