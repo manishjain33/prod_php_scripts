@@ -21,6 +21,6 @@ for ($a=0;$a<=1;$a++){
     $org= $trackersData[$a]['orgid'];
     $sim= $trackersData[$a]['sim'];
     $st=explode("-",$sim);
-    echo $st;
+    print_r($st);
 }
 ?>
