@@ -48,7 +48,7 @@ for ($a=0;$a<=1;$a++){
     echo "IMEI replace - " .$response;
     echo "IMEI error - ".$err;
     echo "<br>";
-    $result  = $session->execute("SELECT * FROM trackers_by_imei where imei='".$imei."'");
+    $result  = $session->execute("SELECT * FROM trackers_by_imei where imei='".$newImei."'");
     foreach ($result as $row) {
         $imei= $row['imei'];
         $tid= $row['trackerid'];
