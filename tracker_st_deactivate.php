@@ -68,7 +68,7 @@ for ($a=0;$a<=1;$a++){
         $foaid=$vrow['foa_id'];
         $vorg= $vrow['orgid'];
         echo "update vehicles_by_vehicleid set is_deleted=1, chassis='".$chassisST."', plate_number='".$plateST."' where (catagory='rental_car') and (foa_id=".$foaid.") and (orgid=".$vorg.")";
-        $vehicleUpdate=$session->execute("update vehicles_by_vehicleid set is_deleted=1, chassis='".$chassisST."', plate_number='".$plateST."' where (catagory='rental_car') and (foa_id=".$foaid.") and (orgid=".$vorg.")");
+        $vehicleUpdate=$session->execute("update vehicles_by_vehicleid set is_deleted=1, chasis_number='".$chassisST."', plate_number='".$plateST."' where (category='rental_car') and (foa_id=".$foaid.") and (orgid=".$vorg.")");
         echo "<br> vehicle updated <br><br>";
     }
 }
