@@ -14,8 +14,8 @@ while ($trackersRow = mysqli_fetch_assoc($trackers_result))
   {
     $trackersData[]=$trackersRow;
   }
-for ($a=0;$a<=1;$a++){
-//for ($a=0;$a<=count($trackersData);$a++){
+//for ($a=0;$a<=1;$a++){
+for ($a=0;$a<=count($trackersData);$a++){
     $imei= $trackersData[$a]['imei'];
     $treackerid= $trackersData[$a]['tid'];
     $organization= $trackersData[$a]['orgid'];
