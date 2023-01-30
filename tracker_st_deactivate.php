@@ -53,7 +53,6 @@ for ($a=0;$a<=1;$a++){
         $imei= $row['imei'];
         $tid= $row['trackerid'];
         $org= $row['orgid'];
-        $foaid=$row['foaid'];
         //print_r($st[1]);
         $result_imei= $session->execute("update trackers_by_imei set is_deleted=1 where (imei='".$row["imei"]."')");
         $result_tid= $session->execute("update trackers_by_trackerid set is_deleted=1 where (trackerid =".$row["trackerid"]." );");
@@ -62,11 +61,13 @@ for ($a=0;$a<=1;$a++){
             $result_tid= $session->execute("update trackers_by_userid set is_deleted=1 where (orgid =".$org.") and (userid =".$followed.") and (trackerid=".$tid.")");
         }
     }
-    $vehicel=$session->execute("select * from vehicles_by_vehicleid where trackerid=".$tid." ALLOW FILTERING");    
+    $vehicel=$session->execute("select * from vehicles_by_vehicleid where trackerid=".$treackerid." ALLOW FILTERING");    
     foreach($vehicel as $vrow){
         $chassisST=$vrow['chassis']."-".$st[1];
         $plateST=$vrow['plate_number']."-".$st[1];
-        $vehicleUpdate=$session->execute("update vehicles_by_vehicleid set is_deleted=1, chassis='".$chassisST."', plate_number='".$plateST."' where (catagory='rental_car') and (foa_id=".$foaid.") and (orgid=".$org.")");
+        $foaid=$vrow['foaid'];
+        $vorg= $vrow['orgid'];
+        $vehicleUpdate=$session->execute("update vehicles_by_vehicleid set is_deleted=1, chassis='".$chassisST."', plate_number='".$plateST."' where (catagory='rental_car') and (foa_id=".$foaid.") and (orgid=".$vorg.")");
         echo "vehicle updated <br><br>";
     }
 }
