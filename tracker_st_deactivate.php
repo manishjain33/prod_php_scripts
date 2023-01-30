@@ -71,5 +71,10 @@ for ($a=0;$a<=count($trackersData);$a++){
         $vehicleUpdate=$session->execute("update vehicles_by_vehicleid set is_deleted=1, chasis_number='".$chassisST."', plate_number='".$plateST."' where (category='rental_car') and (foa_id=".$foaid.") and (orgid=".$vorg.")");
         echo "<br> vehicle updated <br><br>";
     }
+    if($sleep==1){
+        sleep(3);
+        $sleep=0;
+    }
+    $sleep++;
 }
 ?>
