@@ -14,7 +14,7 @@ while ($trackersRow = mysqli_fetch_assoc($trackers_result))
   {
     $trackersData[]=$trackersRow;
   }
-for ($b=0;$b<=1;$b++){
+for ($b=0;$b<=2;$b++){
 //for ($b=0;$b<=count($trackersData);$b++){
     $result  = $session->execute("SELECT * FROM trackers_by_imei where imei ='".$trackersData[$b]['imei']."' ");
     foreach ($result as $row){
