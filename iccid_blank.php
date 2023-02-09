@@ -14,6 +14,7 @@ while ($trackersRow = mysqli_fetch_assoc($trackers_result))
   {
     $trackersData[]=$trackersRow;
   }
+  $sleep=0;
 //for ($b=0;$b<=3;$b++){
 for ($b=0;$b<=count($trackersData);$b++){
     $result  = $session->execute("SELECT * FROM trackers_by_imei where imei ='".$trackersData[$b]['imei']."' ");
@@ -27,6 +28,11 @@ for ($b=0;$b<=count($trackersData);$b++){
             echo "imei - ".$imei." trackerid - ". $tid . " org - " . $orgid." userid - ". $followed . " iccid - ".NULL."<br><br>";
             $result_uid= $session->execute("update trackers_by_userid set sim_serial ='".NULL."' where (orgid =".$orgid.") and (userid =".$followed.") and (trackerid=".$tid.")");
         }
+        if($sleep==1){
+          sleep(3);
+          $sleep=0;
+      }
+      $sleep++;
     }
 }
 ?>
