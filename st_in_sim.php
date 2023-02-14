@@ -8,7 +8,7 @@ $selected = mysqli_select_db($dbhandle,'dubai') ;
 if($dbhandle->connect_errno > 0){
   die('Unable to connect to database' . $dbhandle->connect_error);
 }
-$trackers = "select * from imei_st2 WHERE sno >2124";
+$trackers = "select * from imei_st2 WHERE sno >2266";
 $trackers_result = mysqli_query($dbhandle, $trackers);
 while ($trackersRow = mysqli_fetch_assoc($trackers_result))
   {
