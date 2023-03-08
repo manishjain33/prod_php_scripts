@@ -194,11 +194,11 @@ for ($b=0;$b<=count($trackersData);$b++){
         //print_r($st[1]);
         $simserial=$row["sim_serial"]."-".$st[1];
         $simnumber=$row["sim_number"]."-".$st[1];
-        $result_imei= $session->execute("update trackers_by_imei set sim_number='".$simnumber."' where (imei='".$row["imei"]."')");
-        $result_tid= $session->execute("update trackers_by_trackerid set sim_number='".$simnumber."' where (trackerid =".$row["trackerid"]." );");
+        $result_imei= $session->execute("update trackers_by_imei set sim_serial='".$simserial."' where (imei='".$row["imei"]."')");
+        $result_tid= $session->execute("update trackers_by_trackerid set sim_serial='".$simserial."' where (trackerid =".$row["trackerid"]." );");
         foreach ($row['userid'] as $followed) {
-            echo "imei - ".$imei." trackerid - ". $tid . " org - " . $org." userid - ". $followed . " simserial - ".$simnumber."<br><br>";
-            $result_tid= $session->execute("update trackers_by_userid set sim_number ='".$simnumber."' where (orgid =".$org.") and (userid =".$followed.") and (trackerid=".$tid.")");
+            echo "imei - ".$imei." trackerid - ". $tid . " org - " . $org." userid - ". $followed . " simserial - ".$simserial."<br><br>";
+            $result_tid= $session->execute("update trackers_by_userid set sim_serial ='".$simserial."' where (orgid =".$org.") and (userid =".$followed.") and (trackerid=".$tid.")");
         }
     }
 }
