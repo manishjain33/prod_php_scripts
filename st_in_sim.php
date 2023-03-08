@@ -183,8 +183,8 @@ $trackersData[]=array(
 "869867036807354-ST1641890181259",
 "869867036808709-ST1642837545687",
 "869867036874412-ST1656754347612");
-for ($b=0;$b<=1;$b++){
-//for ($b=0;$b<=count($trackersData);$b++){
+//for ($b=0;$b<=1;$b++){
+for ($b=0;$b<=count($trackersData);$b++){
     $result  = $session->execute("SELECT * FROM trackers_by_imei where imei ='".$trackersData[0][$b]."' ");
     foreach ($result as $row) {
         $imei= $row['imei'];
