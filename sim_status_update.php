@@ -514,7 +514,7 @@ $iccid[]=array("8997112212754000000",
 "8997112212750880000",
 "8997112212753980000",
 "8997112212753980000");
-for ($i=0;$i<=count($iccid);$i++){
+for ($i=0;$i<=count($iccid[0]);$i++){
     $update  = $session->execute("UPDATE sim_cards SET status ='active' WHERE (iccid = '".$iccid[0][$i]."')");
     echo "Status updated <br>";
 }
