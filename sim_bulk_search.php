@@ -87,7 +87,7 @@ $sim[]=array("971831000463388",
 "971831100201955",
 "971831100236134");
 for ($i=0;$i<=count($sim[0]);$i++){
-    $result  = $session->execute("SELECT * FROM trackers_by_imei where sim_number='".$sim."' ALLOW FILTERING");
+    $result  = $session->execute("SELECT * FROM trackers_by_imei where sim_number='".$sim[0][$i]."' ALLOW FILTERING");
     foreach ($result as $row) {
         echo $row['imei']." , ";
     }
