@@ -14,7 +14,7 @@ $hostname = "172.16.1.4";
 //   {
 //     $trackersData[]=$trackersRow;
 //   }
-$trackersData[]=array("864200050718221-ST1639636286117", "864200050839712-ST1632829398207", "864200050855791-ST1639634333139", "863940058266803-ST1661593232781", "864200050715847-ST1657108125399", "867730056565355-ST1670936024522");
+$trackersData[]=array("863940058211361-ST1669699443124");
 //for ($b=0;$b<=1;$b++){
 for ($b=0;$b<=count($trackersData[0]);$b++){
     $result  = $session->execute("SELECT * FROM trackers_by_imei where imei ='".$trackersData[0][$b]."' ");
