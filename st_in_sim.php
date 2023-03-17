@@ -14,7 +14,7 @@ $hostname = "172.16.1.4";
 //   {
 //     $trackersData[]=$trackersRow;
 //   }
-$trackersData[]=array("869616066638753-ST1675867433232", "866907050750347-ST1668520485514", "863069057435472-ST1668520961707");
+$trackersData[]=array("863069057435472-ST1668520961707");
 
 //for ($b=0;$b<=1;$b++){
 for ($b=0;$b<=count($trackersData[0]);$b++){
