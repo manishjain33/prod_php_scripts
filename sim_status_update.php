@@ -14,7 +14,7 @@ $hostname = "172.16.1.4";
 // {
 //     $iccid[]=$iccidRow;
 // }
-$iccid[]=array("8997112212750839284", "8997112212750839285", "8997112212750839283");
+$iccid[]=array("8997112212750882563", "8997112212748104955", "8997112212750882503", "8997112212750839124", "8997112212750839154", "8997112212750839132");
 for ($i=0;$i<=count($iccid[0]);$i++){
     $update  = $session->execute("UPDATE sim_cards SET status ='active' WHERE (iccid = '".$iccid[0][$i]."')");
     echo "Status updated <br>";
