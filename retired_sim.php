@@ -30,5 +30,4 @@ foreach ($result as $row) {
         curl_close($curl);
     echo "Status updated";
 }
-
 ?>
