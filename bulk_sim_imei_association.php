@@ -19,6 +19,30 @@ for ($b=0;$b<=1;$b++){
             echo "imei - ".$imei." trackerid - ". $tid . " org - " . $orgid." userid - ". $followed . " iccid - ".$iccid." sim - ".$simArray[$b]."<br><br>";
             $result_uid= $session->execute("update trackers_by_userid set sim_serial ='".$iccid."',sim_number='".$simArray[$b]."' where (orgid =".$orgid.") and (userid =".$followed.") and (trackerid=".$tid.")");
         }
+        $curl = curl_init();
+        curl_setopt_array($curl, array(
+            CURLOPT_URL => 'https://restapi4.jasper.ae/rws/api/v1/devices/'.$iccid,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'PUT',
+            CURLOPT_POSTFIELDS =>'{
+                "status": "ACTIVATED"
+            }',
+            CURLOPT_HTTPHEADER => array(
+                'Authorization: Basic RU1jb2RlOjQ2YjFmYzQzLTFkNGMtNDg4NS1hZmI1LTRlNzYzZDFkOWUzNA==',
+                'Content-Type: application/json',
+                'Cookie: JSESSIONID=E2F56995FF38010A0DF3FCF34D5FB210; BIGipServer~Control_Center~POOL_POD4_RWS=!o/UypoTKTj6QWfZMDTqO4P+EVERACo/imLSyfq4eWtH+kiyNO7sSVZPrUsgMy+aszRRNhtpYHURjtFmC5B4gb2tk4b/LhpbaBHg0w013Jw+lwg=='
+            ),
+            ));
+        
+            $response = curl_exec($curl);
+            echo $response;
+            curl_close($curl);
+        echo "Status updated <br>";
     }
 }
 ?>
