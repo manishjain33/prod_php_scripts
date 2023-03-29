@@ -10,7 +10,7 @@ for ($b=0;$b<=1;$b++){
     }
     $result  = $session->execute("SELECT * FROM trackers_by_imei where imei ='".$imeiArray[$b]."' ");
     foreach ($result as $row){
-        $imei=$imeiArray[$b]['imei'];
+        $imei=$imeiArray[$b];
         $orgid=$row['orgid'];
         $tid=$row['trackerid'];
         $result_imei= $session->execute("update trackers_by_imei set sim_serial='".$iccid."',sim_number='".$simArray[$b]."' where (imei='".$imei."')");
