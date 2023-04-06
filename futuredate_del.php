@@ -1,6 +1,6 @@
 <?php
 include('connProd.php') ;
-$result  = $session->execute("SELECT * FROM last_avl_data WHERE year_month > 202301 ALLOW FILTERING;");
+$result  = $session->execute("SELECT * FROM last_avl_data WHERE year_month > 202304 ALLOW FILTERING;");
 foreach ($result as $row) {
     $trackersData[]=$row;
 }
