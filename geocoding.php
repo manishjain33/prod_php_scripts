@@ -26,7 +26,7 @@ $password="dps123";
 $dbname="dubai";
 $conn = new mysqli($servername, $username, $password,$dbname);
 
-$sql1 = "select tid,latitude,longitude from citv";
+$sql1 = "select latitude,longitude from citv";
 $result1 = $conn->query($sql1);
 
 $i=0;
