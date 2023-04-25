@@ -16,6 +16,7 @@ while ($trackerid = mysqli_fetch_assoc($result))
 {
   $tidData[]=$trackerid;
 }
-echo count($tidData);
-
+//echo count($tidData);
+$postraw=array("coords"=>array("trackerid"=>"23bfbe40-f6f1-11e8-8593-db6ca2a126d5","lat"=>"24.50086021423340","lng"=>"54.39120864868164"));
+echo json_encode($postraw);
 ?>
