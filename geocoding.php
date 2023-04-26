@@ -61,8 +61,9 @@ $count1=$j;
 		
 
 }
-
-for ($i=0;$i<4;$i++)
+echo count($A);
+die();
+for ($i=0;$i<count($A);$i++)
 
 {
 
