@@ -96,7 +96,7 @@ curl_close($curl);
 //echo $response;
 
 $data = json_encode($response);
-var_dump($data);
+var_dump($response);
 echo "\n <br>";
 //echo $data->display_name;
 //die();
