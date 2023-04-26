@@ -61,7 +61,7 @@ $count1=$j;
 		
 
 }
-for ($i=0;$i<count($A);$i++)
+for ($i=0;$i<count($A1);$i++)
 
 {
 
