@@ -98,7 +98,7 @@ curl_close($curl);
 $data = json_decode($response);
 var_dump($data);
 echo "\n <br>";
-//echo $data->display_name;
+echo $data->display_name;
 //die();
 //$location=$data->address;
 
