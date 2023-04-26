@@ -93,11 +93,11 @@ curl_setopt_array($curl, array(
 $response = curl_exec($curl);
 
 curl_close($curl);
-echo $response;
+//echo $response;
 
 $data = json_decode(json_encode($response));
-echo "/n<br>".$data;
-//echo $response->display_name;
+echo $data."/n <br>";
+echo $data->display_name;
 //die();
 //$location=$data->address;
 
