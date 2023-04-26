@@ -122,7 +122,7 @@ for ($a=0;$a<=count($tid);$a++){
     foreach ($result as $row) {
         $chassis=$row['chasis_number'];
         $plate= $row['plate_number'];
-        echo $chassis.",".$plate;
+        echo $chassis.",".$plate."<br>";
     }
 }
 ?>
