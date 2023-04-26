@@ -61,7 +61,7 @@ $count1=$j;
 		
 
 }
-echo count($A);
+echo count($A1);
 die();
 for ($i=0;$i<count($A);$i++)
 
