@@ -95,7 +95,7 @@ $response = curl_exec($curl);
 curl_close($curl);
 echo $response;
 
-$data = json_decode(json_decode($response));
+$data = json_decode(json_encode($response));
 echo "/n<br>".$data;
 //echo $response->display_name;
 //die();
