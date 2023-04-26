@@ -96,16 +96,12 @@ curl_close($curl);
 //echo $response;
 
 $data = json_decode($response);
-var_dump($data);
-echo "\n <br>";
-echo $data->display_name;
-//die();
-//$location=$data->address;
+//var_dump($data);
+//echo "\n <br>";
+echo $data->display_name. "\n";
 
-
-
-//$update = "update citv set location='$location' where tid='$tid' and latitude='$lat' and longitude ='$long'";
-//$conn->query($update);
+$update = "update citv set location='$data->display_name' where tid='$tid' and latitude='$lat' and longitude ='$long'";
+$conn->query($update);
 
 }
 ?>
