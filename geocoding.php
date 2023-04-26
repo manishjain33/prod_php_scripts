@@ -26,7 +26,7 @@ $password="dps123";
 $dbname="dubai";
 $conn = new mysqli($servername, $username, $password,$dbname);
 
-$sql1 = "select latitude,longitude from citv";
+$sql1 = "select tid,latitude,longitude from citv";
 $result1 = $conn->query($sql1);
 
 $i=0;
@@ -79,7 +79,7 @@ $long=$A3[$i];
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
-  CURLOPT_URL => 'http://172.16.1.136/nom/reverse.php?format=json&lat='.$lat.'&lon='.$long.'&zoom=18',
+  CURLOPT_URL => 'http://172.16.1.136/nom/reverse.php?format=json&lat='.$lat.'&lon='.$long.'&accept-language=en',
   CURLOPT_RETURNTRANSFER => true,
   CURLOPT_ENCODING => '',
   CURLOPT_MAXREDIRS => 10,
@@ -95,7 +95,8 @@ $response = curl_exec($curl);
 curl_close($curl);
 echo $response;
 
-//$data = json_decode($response);
+$data = json_decode($response);
+echo "/n<br>".$data;
 //echo $response->display_name;
 //die();
 //$location=$data->address;
