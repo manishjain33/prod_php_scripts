@@ -95,9 +95,10 @@ $response = curl_exec($curl);
 curl_close($curl);
 //echo $response;
 
-$data = json_decode(json_encode($response));
-echo $data."/n <br>";
-echo $data->display_name;
+$data = json_encode($response);
+var_dump($data);
+echo "\n <br>";
+//echo $data->display_name;
 //die();
 //$location=$data->address;
 
