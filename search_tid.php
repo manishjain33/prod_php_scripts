@@ -1,7 +1,7 @@
 <?php
 include('connProd.php') ;
-$tid=$_GET['tid'];
-//$imei=866907057592486;
+//$tid=$_GET['tid'];
+$tid="6a1acf10-f47b-11ed-a566-7e9fe3e5ea51";
 $result  = $session->execute("SELECT * FROM trackers_by_trackerid where trackerid=".$tid);
 foreach ($result as $row) {
     $imei=$row['imei'];
