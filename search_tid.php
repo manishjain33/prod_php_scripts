@@ -17,6 +17,6 @@ if ($count==0){
     $resp="no_record_found";
 }else{$resp="record_found";}
 
-$res=array("imei"=>$imei,"iccid"=>$iccid,"sim number"=>$simNumber,"model"=>$model,"status"=>$resp);
+$res=array("imei"=>$imei,"iccid"=>$iccid,"sim_number"=>$simNumber,"model"=>$model,"status"=>$resp);
 echo json_encode($res);
 ?>
