@@ -9,7 +9,7 @@ foreach ($result as $row) {
     $model=$row['tracker_model'];
     $iccid=$row['sim_serial'];
 }
-$sim  = $session->execute("SELECT count(*) FROM sim_cards where iccid=".$iccid);
+$sim  = $session->execute("SELECT count(*) FROM sim_cards where iccid='".$iccid."'");
 foreach ($sim as $simrow) {
     $count=$simrow['count'];
 }
