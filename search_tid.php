@@ -2,7 +2,7 @@
 include('connProd.php') ;
 $tid=$_GET['tid'];
 //$imei=866907057592486;
-$result  = $session->execute("SELECT * FROM trackers_by_trackerid where trackerid='".$tid."'");
+$result  = $session->execute("SELECT * FROM trackers_by_trackerid where trackerid=".$tid);
 foreach ($result as $row) {
     $imei=$row['imei'];
     $simNumber=$row['sim_number'];
