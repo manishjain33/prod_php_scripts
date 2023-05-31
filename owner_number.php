@@ -15,8 +15,10 @@ while ($simRow = mysqli_fetch_assoc($simQuery_result))
   $simData[]=$simRow;
 }
 //UPDATE "earthone"."organizations" SET "owner_phone" = '9715500129451' WHERE ("id" = 13190140-5271-11eb-b1f5-daa009512d8f);
-for ($i=0;$i<=count($simData);$i++){
+//for ($i=0;$i<=count($simData);$i++){
+for ($i=0;$i<=1;$i++){
     $update  = $session->execute("UPDATE organizations SET owner_phone = '".$simData[$i]['owner_phone']."' WHERE (id = '".$simData[$i]['orgid']."')");
+    print_r($simData[$i]['orgid']);
     echo "Status updated <br>";
 }
 ?>
