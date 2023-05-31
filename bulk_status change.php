@@ -13,11 +13,11 @@ while(true){
   if ($result->isLastPage()){ break; }
   $result=$result->nextPage();
 }
-//for($a=0;$a<=count($sim_array);$a++){
-for($a=0;$a<=1;$a++){
+for($a=0;$a<=count($sim_array);$a++){
+//for($a=0;$a<=1;$a++){
     echo "Iccid - ";
     print_r($sim_array[$a]);
     $update  = $session->execute("UPDATE sim_cards SET status ='active' WHERE (iccid = '".$sim_array[$a]."')");
-    echo " - updated <br> /n";
+    echo " - updated <br> \n";
 }
 ?>
