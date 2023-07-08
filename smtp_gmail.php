@@ -29,6 +29,7 @@ try {
     $mail->addReplyTo('donotreply@boxdrop.ae', 'Information');
     //$mail->addCC('');
     $mail->addBCC('zainudheen.f@emcode.ae');
+    $mail->addBCC('shareef@emcode.ae');
 
     //Attachments
     //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
@@ -36,7 +37,7 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
+    $mail->Subject = 'Boxdrop Introduction';
     $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
