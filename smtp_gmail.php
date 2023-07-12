@@ -18,7 +18,7 @@ if($dbhandle->connect_errno > 0)
     {
         die('Unable to connect to database' . $dbhandle->connect_error);
     }
-$sql = "SELECT * from users_test";
+$sql = "SELECT * from users";
 
 $result = mysqli_query($dbhandle,$sql);
 while ($usermail = mysqli_fetch_assoc($result))
@@ -58,7 +58,7 @@ for ($a=0;$a<count($user);$a++){
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
         $mail->Subject = 'Introducing BoxDrop: the Last Minute Deliver App for Precious Items - Exclusive Onboarding Invitation for Jewellers & Money exchange in Dubai';
-        $mail->Body    = 'Dear Customer<br>'
+        $mail->Body    = 'Dear Customer,<br>'
                          .'<p>Under the initiative of SIRA ( Security Industry Regulatory Agency), to improve the security of valuable goods delivery services in Dubai, We are delighted to extend an exclusive invitation to you and your esteemed company to join our new and groundbreaking Last Minute Deliver App for Precious Items, called BoxDrop.</p>'
                          .'<p>With BoxDrop app, you can experience the highest standard of delivery consistency and security for valuable goods.</p>'
                          .'<p>In response to the growing demand for a secure and seamless delivery service for precious and expensive items, we have developed a cutting-edge solution designed specifically for the jewelry and money exchange industry. Our app ensures that your valuable goods are transported with the utmost care and delivered promptly, giving you peace of mind throughout the entire process.</p>'
@@ -69,7 +69,7 @@ for ($a=0;$a<count($user);$a++){
                          .'<p>Once your company is successfully registered and active, we will share all the pertinent details regarding app usage, specific features, and guidelines tailored to meet your unique needs. We are confident that our Last Minute Delivery App for Precious Items will revolutionize the way you manage your deliveries, providing you with a seamless and secure experience.</p>'
                          .'<p>Please do not hesitate to reach out to us at care@boxdrop.ae, if you have any questions or require further assistance. We are here to support you every step of the way.</p>'
                          .'<p>Thank you for considering our invitation. We look forward to welcoming your esteemed company to our exclusive network of trusted money exchange and jewelers.</p>'
-                         .'<p>Best regards,<br>Team BoxDrop</p>';
+                         .'<p>Best regards,<br><br>Team BoxDrop</p>';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
