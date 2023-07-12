@@ -5,12 +5,12 @@ $hostname = "172.16.1.4";
 
 //connection to the database
 $dbhandle = mysqli_connect($hostname, $username, $password) ;
-$selected = mysqli_select_db($dbhandle,"user") ;
+$selected = mysqli_select_db($dbhandle,"boxdrop") ;
 if($dbhandle->connect_errno > 0)
     {
         die('Unable to connect to database' . $dbhandle->connect_error);
     }
-$sql = "SELECT * from users";
+$sql = "SELECT * from users_test";
 
 $result = mysqli_query($dbhandle,$sql);
 while ($usermail = mysqli_fetch_assoc($result))
