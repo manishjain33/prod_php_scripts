@@ -45,7 +45,7 @@ for ($a=0;$a<count($user);$a++){
     curl_close($curl);
     echo $response;
     $resp=json_decode($response);
-    
+    var_dump($resp);
 
 }
 
