@@ -24,7 +24,7 @@ for ($a=0;$a<count($user);$a++){
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-    CURLOPT_URL => 'http://172.16.1.219:8888/api/v1/user/invite',
+    CURLOPT_URL => 'http://172.16.1.219:3000/api/v1/user/invite',
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
