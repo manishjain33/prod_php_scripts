@@ -18,6 +18,8 @@ while ($usermail = mysqli_fetch_assoc($result))
   $user[]=$usermail;
 }
 mysqli_close($dbhandle);
+print_r($user);
+die();
 for ($a=0;$a<count($user);$a++){
     $qu=array("firstName"=>"","lastName"=>"","email"=>$user[$a]['email'],"phone"=>$user[$a]['mobile'],"designation"=>"","eidNumber"=>$user[$a]['eid'],"type"=>"companyAdmin","reviewed"=>"false");
     $postdata=json_encode($qu);
