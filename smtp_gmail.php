@@ -73,7 +73,8 @@ for ($a=0;$a<count($user);$a++){
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
         $mail->send();
-        echo 'Message has been sent';
+        print_r($user[$a]['email']);
+        echo ' - Message has been sent <br>/n';
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
