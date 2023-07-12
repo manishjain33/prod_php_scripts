@@ -43,10 +43,10 @@ for ($a=0;$a<count($user);$a++){
     $response = curl_exec($curl);
 
     curl_close($curl);
-    echo $response;
+    //echo $response;
     $resp=json_decode($response);
-    //var_dump($resp);
-    echo $resp->_id;
+    var_dump($resp);
+    echo $resp->result->_id;
 }
 
 ?>
