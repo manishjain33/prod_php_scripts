@@ -78,5 +78,6 @@ for ($a=0;$a<count($user);$a++){
     } catch (Exception $e) {
         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
     }
+    sleep(3);
 }
 ?>
