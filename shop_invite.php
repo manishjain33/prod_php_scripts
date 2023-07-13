@@ -12,7 +12,7 @@ if($dbhandle->connect_errno > 0)
     {
         die('Unable to connect to database' . $dbhandle->connect_error);
     }
-$sql = "SELECT * from users_test";
+$sql = "SELECT * from shops";
 
 $result = mysqli_query($dbhandle,$sql);
 while ($usermail = mysqli_fetch_assoc($result))
@@ -49,7 +49,7 @@ for ($a=0;$a<count($user);$a++){
     //echo $response;
     $resp=json_decode($response);
     //var_dump($resp);
-    echo $resp->result->_id;
+    //echo $resp->result->_id;
     $id=$resp->result->_id;
 
 //create company
@@ -76,12 +76,10 @@ for ($a=0;$a<count($user);$a++){
 
     $responseComp = curl_exec($curl);
     $respComp=json_decode($responseComp);
-    //var_dump($resp);
-    echo $respComp->_id;
+    //echo $respComp->_id;
     $compid=$respComp->_id;
 
     curl_close($curl);
-    echo $responseComp;
 
     // patch user by userid
 
@@ -106,7 +104,8 @@ for ($a=0;$a<count($user);$a++){
     $responsePatch = curl_exec($curl);
 
     curl_close($curl);
-    echo $responsePatch;
+    echo $responsePatch." - invite sent \n ";
+
 }
 
 ?>
