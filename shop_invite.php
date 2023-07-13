@@ -1,5 +1,5 @@
 <?php
- header('Content-Type: text/html; charset=utf-8');
+header('Content-Type: text/html; charset=utf-8');
 $username = "dps";
 $password = "dps123";
 $hostname = "172.16.1.4"; 
@@ -7,7 +7,7 @@ $hostname = "172.16.1.4";
 //connection to the database
 $dbhandle = mysqli_connect($hostname, $username, $password) ;
 $selected = mysqli_select_db($dbhandle,"boxdrop") ;
-mysqli_set_charset($conn,"utf8");
+mysqli_set_charset($dbhandle,"utf8");
 if($dbhandle->connect_errno > 0)
     {
         die('Unable to connect to database' . $dbhandle->connect_error);
