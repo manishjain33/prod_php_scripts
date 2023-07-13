@@ -1,4 +1,5 @@
 <?php
+ header('Content-Type: text/html; charset=utf-8');
 $username = "dps";
 $password = "dps123";
 $hostname = "172.16.1.4"; 
@@ -6,6 +7,7 @@ $hostname = "172.16.1.4";
 //connection to the database
 $dbhandle = mysqli_connect($hostname, $username, $password) ;
 $selected = mysqli_select_db($dbhandle,"boxdrop") ;
+mysqli_set_charset($conn,"utf8");
 if($dbhandle->connect_errno > 0)
     {
         die('Unable to connect to database' . $dbhandle->connect_error);
@@ -18,6 +20,8 @@ while ($usermail = mysqli_fetch_assoc($result))
   $user[]=$usermail;
 }
 mysqli_close($dbhandle);
+print_r($user);
+die();
 for ($a=0;$a<count($user);$a++){
     $qu=array("firstName"=>"","lastName"=>"","email"=>$user[$a]['email'],"phone"=>'+'.$user[$a]['mobile'],"designation"=>"","eidNumber"=>$user[$a]['eid'],"type"=>"companyAdmin","reviewed"=>"false");
     $postdata=json_encode($qu);
