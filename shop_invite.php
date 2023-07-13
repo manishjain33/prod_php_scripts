@@ -47,6 +47,64 @@ for ($a=0;$a<count($user);$a++){
     $resp=json_decode($response);
     //var_dump($resp);
     echo $resp->result->_id;
+    $id=$resp->result->_id;
+
+//create company
+    $comp=array("name"=>$user[$a]['shopname'],"companyType"=>"shop");
+    $postdataComp=json_encode($comp);
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+    CURLOPT_URL => 'http://172.16.1.219:3000/api/v1/company',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_SSL_VERIFYPEER=>false,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'POST',
+    CURLOPT_POSTFIELDS =>$postdataComp,
+    CURLOPT_HTTPHEADER => array(
+        'Content-Type: application/json',
+        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDRmNDI1MWY4MGExOThkNzVkZjhhZmMiLCJpYXQiOjE2ODkxNzMwMTYsImV4cCI6MTcyMDcwOTAxNn0.bQOM-kDbgFiFkt_RF_1nyuZFPsIzpWRZS7PAM3gK1QQ'
+    ),
+    ));
+
+    $responseComp = curl_exec($curl);
+
+    curl_close($curl);
+    echo $responseComp;
+
+    // patch user by userid
+    $comp=array("name"=>$user[$a]['shopname'],"companyType"=>"shop");
+    $postdataComp=json_encode($comp);
+
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+    CURLOPT_URL => 'http://172.16.1.219:3000/api/v1/user/{{userId}}',
+    CURLOPT_RETURNTRANSFER => true,
+    CURLOPT_ENCODING => '',
+    CURLOPT_MAXREDIRS => 10,
+    CURLOPT_TIMEOUT => 0,
+    CURLOPT_FOLLOWLOCATION => true,
+    CURLOPT_SSL_VERIFYPEER=>false,
+    CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+    CURLOPT_CUSTOMREQUEST => 'PATCH',
+    CURLOPT_POSTFIELDS => array('company' => $id),
+    CURLOPT_HTTPHEADER => array(
+        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDRmNDI1MWY4MGExOThkNzVkZjhhZmMiLCJpYXQiOjE2ODkxNzMwMTYsImV4cCI6MTcyMDcwOTAxNn0.bQOM-kDbgFiFkt_RF_1nyuZFPsIzpWRZS7PAM3gK1QQ'
+    ),
+    ));
+
+    $responsePatch = curl_exec($curl);
+
+    curl_close($curl);
+    echo $responsePatch;
+
+
+
 }
 
 ?>
