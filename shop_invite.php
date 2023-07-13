@@ -72,18 +72,20 @@ for ($a=0;$a<count($user);$a++){
     ));
 
     $responseComp = curl_exec($curl);
+    $respComp=json_decode($responseComp);
+    //var_dump($resp);
+    echo $respComp->_id;
+    $compid=$respComp->_id;
 
     curl_close($curl);
     echo $responseComp;
 
     // patch user by userid
-    $comp=array("name"=>$user[$a]['shopname'],"companyType"=>"shop");
-    $postdataComp=json_encode($comp);
 
     $curl = curl_init();
 
     curl_setopt_array($curl, array(
-    CURLOPT_URL => 'http://172.16.1.219:3000/api/v1/user/{{userId}}',
+    CURLOPT_URL => 'http://172.16.1.219:3000/api/v1/user/'.$id,
     CURLOPT_RETURNTRANSFER => true,
     CURLOPT_ENCODING => '',
     CURLOPT_MAXREDIRS => 10,
@@ -92,7 +94,7 @@ for ($a=0;$a<count($user);$a++){
     CURLOPT_SSL_VERIFYPEER=>false,
     CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
     CURLOPT_CUSTOMREQUEST => 'PATCH',
-    CURLOPT_POSTFIELDS => array('company' => $id),
+    CURLOPT_POSTFIELDS => array('company' => $compid),
     CURLOPT_HTTPHEADER => array(
         'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDRmNDI1MWY4MGExOThkNzVkZjhhZmMiLCJpYXQiOjE2ODkxNzMwMTYsImV4cCI6MTcyMDcwOTAxNn0.bQOM-kDbgFiFkt_RF_1nyuZFPsIzpWRZS7PAM3gK1QQ'
     ),
@@ -102,9 +104,6 @@ for ($a=0;$a<count($user);$a++){
 
     curl_close($curl);
     echo $responsePatch;
-
-
-
 }
 
 ?>
