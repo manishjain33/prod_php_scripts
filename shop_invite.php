@@ -22,7 +22,7 @@ while ($usermail = mysqli_fetch_assoc($result))
 mysqli_close($dbhandle);
 
 for ($a=0;$a<count($user);$a++){
-    $qu=array("firstName"=>"","lastName"=>"","email"=>$user[$a]['email'],"phone"=>'+'.$user[$a]['mobile'],"designation"=>"","eidNumber"=>$user[$a]['eid'],"type"=>"companyAdmin","reviewed"=>"false");
+    $qu=array("firstName"=>"","lastName"=>"","email"=>$user[$a]['email'],"phone"=>'+'.$user[$a]['mobile'],"designation"=>"","eidNumber"=>$a,"type"=>"companyAdmin","reviewed"=>"false");
     $postdata=json_encode($qu);
     $curl = curl_init();
 
