@@ -38,8 +38,8 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "Release Notification - Command module !",
-          "message": "data:text/html,Dear Customer,<br>This is to let you know that the Command module is currently operational.<br><br>Default Vehicle immobilization and remobilization are available via SecurePath instructions.<br><br>Select the appropriate course of action, then click the <b>Send command</b> button. Once the instruction has been sent to the unit, you will see a <b>Success</b> message on the panel if there was no error; otherwise, you will see a failure message. You can try sending the message again or get in touch with SecurePath support if it fails.<bnr><br>Immobilize Vehicle - This will put a stop to the car.<br><br>Remobilize  Vehicle - Will start the car after immobilization."
+          "subject": "Profile and Tradelicense!",
+          "message": "data:text/html,Dear Customer,<br>This email is a reminder to complete or update <b>Manage Your Profile Information</b> in the SecurePath support panel profile module. Ensure the form is always filled out correctly and with the most recent information.</br>Send a copy of your most recent trade license with the subject <b>trade license</b> to the support center as well. Make sure you provide the appropriate trade license for those emirates if any vendor is a part of SecurePath Basic under separate emirates.<br>Waiting for your update !"
       }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
