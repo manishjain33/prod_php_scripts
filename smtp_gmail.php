@@ -44,8 +44,8 @@ for ($a=0;$a<count($user);$a++){
 
         //Recipients
         $mail->setFrom('donotreply@boxdrop.ae', 'BoxDrop');
-        $mail->addAddress(strtolower($user[$a]['email']));     //Add a recipient
-        //$mail->addAddress('man_21jain@yahoo.com');               //Name is optional
+        //$mail->addAddress(strtolower($user[$a]['email']));     //Add a recipient
+        $mail->addAddress('shareef@emcode.ae');               //Name is optional
         $mail->addReplyTo('donotreply@boxdrop.ae', 'Information');
         //$mail->addCC('');
         //$mail->addBCC('zainudheen.f@emcode.ae');
