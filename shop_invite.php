@@ -39,7 +39,7 @@ for ($a=0;$a<count($user);$a++){
     CURLOPT_POSTFIELDS =>$postdata,
     CURLOPT_HTTPHEADER => array(
         'Content-Type: application/json',
-        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDQ4YzA3ZDMwMzg2MzM4MDM2MmVlMzAiLCJpYXQiOjE2ODkxNjY0MTMsImV4cCI6MTcyMDcwMjQxM30.RwM4KG51BeblTTUFpTILh0UpB8z4NgrrS5pbKQyJNXU'
+        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NGU2YmI1MWNlZDY4MTQ1NTBkZmY2MjkiLCJpYXQiOjE2OTI5NTI2NTAsImV4cCI6MTcyNDQ4ODY1MH0.q9L6njEvww7xzYJ_bOxmbSk1DvEfFN9a77p5ycj0yos'
     ),
     ));
 
@@ -70,7 +70,7 @@ for ($a=0;$a<count($user);$a++){
     CURLOPT_POSTFIELDS =>$postdataComp,
     CURLOPT_HTTPHEADER => array(
         'Content-Type: application/json',
-        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDRmNDI1MWY4MGExOThkNzVkZjhhZmMiLCJpYXQiOjE2ODkxNzMwMTYsImV4cCI6MTcyMDcwOTAxNn0.bQOM-kDbgFiFkt_RF_1nyuZFPsIzpWRZS7PAM3gK1QQ'
+        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NGU2YmI1MWNlZDY4MTQ1NTBkZmY2MjkiLCJpYXQiOjE2OTI5NTI2NTAsImV4cCI6MTcyNDQ4ODY1MH0.q9L6njEvww7xzYJ_bOxmbSk1DvEfFN9a77p5ycj0yos'
     ),
     ));
 
