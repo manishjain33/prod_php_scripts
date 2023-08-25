@@ -58,7 +58,7 @@ for ($a=0;$a<1;$a++){
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Introducing BoxDrop: the Last Minute Deliver App for Precious Items - Exclusive Onboarding Invitation for Jewellers & Money exchange in Dubai';
+        $mail->Subject = 'SIRA initiative Introducing BoxDrop: the Last Minute Deliver App for Precious Items - Exclusive Onboarding Invitation for Jewellers & Money exchange in Dubai';
         $mail->Body    = 'Dear Customer,<br>'
                          .'<p>Under the initiative of SIRA ( Security Industry Regulatory Agency), to improve the security of valuable goods delivery services in Dubai, We are delighted to extend an exclusive invitation to you and your esteemed company to join our new and groundbreaking Last Minute Deliver App for Precious Items, called BoxDrop.</p>'
                          .'<p>With BoxDrop app, you can experience the highest standard of delivery consistency and security for valuable goods.</p>'
