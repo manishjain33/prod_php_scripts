@@ -97,7 +97,7 @@ for ($a=0;$a<count($user);$a++){
     CURLOPT_CUSTOMREQUEST => 'PATCH',
     CURLOPT_POSTFIELDS => array('company' => $compid),
     CURLOPT_HTTPHEADER => array(
-        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NDRmNDI1MWY4MGExOThkNzVkZjhhZmMiLCJpYXQiOjE2ODkxNzMwMTYsImV4cCI6MTcyMDcwOTAxNn0.bQOM-kDbgFiFkt_RF_1nyuZFPsIzpWRZS7PAM3gK1QQ'
+        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NGU2YmI1MWNlZDY4MTQ1NTBkZmY2MjkiLCJpYXQiOjE2OTI5NTI2NTAsImV4cCI6MTcyNDQ4ODY1MH0.q9L6njEvww7xzYJ_bOxmbSk1DvEfFN9a77p5ycj0yos'
     ),
     ));
 
