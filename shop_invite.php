@@ -12,7 +12,7 @@ if($dbhandle->connect_errno > 0)
     {
         die('Unable to connect to database' . $dbhandle->connect_error);
     }
-$sql = "SELECT * from shops";
+$sql = "SELECT * from shops_dev";
 
 $result = mysqli_query($dbhandle,$sql);
 while ($usermail = mysqli_fetch_assoc($result))
