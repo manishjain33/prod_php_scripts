@@ -46,7 +46,7 @@ for ($a=0;$a<1;$a++){
         //Recipients
         $mail->setFrom('donotreply@boxdrop.ae', 'BoxDrop');
         //$mail->addAddress(strtolower($user[$a]['email']));     //Add a recipient
-        $mail->addAddress('mamtha@dubaicityofgold.ae');               //Name is optional
+        $mail->addAddress('shareef@emcode.ae');               //Name is optional
         $mail->addReplyTo('donotreply@boxdrop.ae', 'Information');
         //$mail->addCC('');
         //$mail->addBCC('zainudheen.f@emcode.ae');
@@ -66,7 +66,7 @@ for ($a=0;$a<1;$a++){
                          .'<p>During Phase 1, we are excited to offer this service exclusively in the Gold Souk area, catering specifically to the transfer of goods within the souk. This localized approach guarantees efficient and reliable delivery within the designated zone.</p>'
                          .'<p>To take advantage of this exceptional service, we kindly request you to enroll your company as a participant by completing the onboarding process through our web app. By following the provided onboarding web app link, you will be able to submit all the necessary information required for registration.</p>'
                          .'<p>We would like to emphasize that this service is available only to invited companies to maintain the utmost level of exclusivity and security. Rest assured, we have taken every precaution to ensure that your valuable assets are handled with the highest level of professionalism and confidentiality.</p>'
-                         .'<p>Upon successful invite you will receive a sms which contains a link for enrolling to the platform or access the following link to proceed <a href="https://boxdrop.ae">boxdrop.ae</a>.</p>'
+                         .'<p>Upon successful invite you will receive a sms which contains a link for enrolling to the BoxDrop platform or access the following link to proceed registration to BoxDrop:<br><br><a href="https://boxdrop.ae">https://boxdrop.ae</a>.</p>'
                          .'<p>Once your company is successfully registered and active, we will share all the pertinent details regarding app usage, specific features, and guidelines tailored to meet your unique needs. We are confident that our Last Minute Delivery App for Precious Items will revolutionize the way you manage your deliveries, providing you with a seamless and secure experience.</p>'
                          .'<p>Please do not hesitate to reach out to us at care@boxdrop.ae, if you have any questions or require further assistance. We are here to support you every step of the way.</p>'
                          .'<p>Thank you for considering our invitation. We look forward to welcoming your esteemed company to our exclusive network of trusted money exchange and jewelers.</p>'
