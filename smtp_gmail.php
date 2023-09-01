@@ -27,8 +27,8 @@ while ($usermail = mysqli_fetch_assoc($result))
 }
 mysqli_close($dbhandle);
 
-for ($a=0;$a<count($user);$a++){
-//for ($a=0;$a<1;$a++){
+//for ($a=0;$a<count($user);$a++){
+for ($a=0;$a<1;$a++){
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
 
@@ -45,8 +45,8 @@ for ($a=0;$a<count($user);$a++){
 
         //Recipients
         $mail->setFrom('donotreply@boxdrop.ae', 'BoxDrop');
-        $mail->addAddress(strtolower($user[$a]['email']));     //Add a recipient
-        //$mail->addAddress('shareef@emcode.ae');               //Name is optional
+        //$mail->addAddress(strtolower($user[$a]['email']));     //Add a recipient
+        $mail->addAddress('shareef@emcode.ae');               //Name is optional
         $mail->addReplyTo('donotreply@boxdrop.ae', 'Information');
         //$mail->addCC('');
         //$mail->addBCC('zainudheen.f@emcode.ae');
