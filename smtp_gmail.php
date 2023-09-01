@@ -18,7 +18,7 @@ if($dbhandle->connect_errno > 0)
     {
         die('Unable to connect to database' . $dbhandle->connect_error);
     }
-$sql = "SELECT * from users";
+$sql = "SELECT * from users where mobile!=0";
 
 $result = mysqli_query($dbhandle,$sql);
 while ($usermail = mysqli_fetch_assoc($result))
@@ -46,7 +46,7 @@ for ($a=0;$a<1;$a++){
         //Recipients
         $mail->setFrom('donotreply@boxdrop.ae', 'BoxDrop');
         //$mail->addAddress(strtolower($user[$a]['email']));     //Add a recipient
-        $mail->addAddress('shareef@emcode.ae');               //Name is optional
+        //$mail->addAddress('shareef@emcode.ae');               //Name is optional
         $mail->addAddress('manish.j@emcode.ae');               //Name is optional
         $mail->addReplyTo('donotreply@boxdrop.ae', 'Information');
         //$mail->addCC('');
@@ -63,8 +63,8 @@ for ($a=0;$a<1;$a++){
         $mail->Body    = 'Dear Customer,<br>'
                          .'<p>Under the initiative of SIRA ( Security Industry Regulatory Agency), to improve the security of valuable goods delivery services in Dubai, We are delighted to extend an exclusive invitation to you and your esteemed company to join our new and groundbreaking Last Minute Deliver App for Precious Items, called BoxDrop.</p>'
                          .'<p>You can use the following information to login:</p>'
-                         .'<p>Registered mobile number: 971505010023</p>'
-                         .'<p>Registered email ID: shareef@emcode.ae</p>'
+                         .'<p>Registered mobile number: '.$user[$a]['mobile'].'</p>'
+                         .'<p>Registered email ID: '.$user[$a]['email'].'</p>'
                          .'<p>During Phase 1, we are excited to offer this service exclusively in the Gold Souk area, catering specifically to the transfer of goods within the souk. This localized approach guarantees efficient and reliable delivery within the designated zone.</p>'
                          .'<p>Please do not hesitate to reach out to us at care@boxdrop.ae, if you have any questions or require further assistance. We are here to support you every step of the way.</p>'
                          .'<p>Thank you for considering our invitation. We look forward to welcoming your esteemed company to our exclusive network of trusted money exchange and jewelers.</p>'
