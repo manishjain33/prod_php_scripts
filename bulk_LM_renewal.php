@@ -1,8 +1,6 @@
 <?php
 include('connProd.php') ;
 $imei[]=array(
-867604058749582,
-867604058764680,
 860186050127931,
 867604058745853,
 860186050126479,
@@ -396,7 +394,7 @@ $imei[]=array(
 863257067883944,
 866770056742951,
 864145065185397);
-for ($b=0;$b<=1;$b++){
+for ($b=0;$b<=count($imei);$b++){
     $result  = $session->execute("SELECT trackerid FROM trackers_by_imei WHERE imei ='".$imei[0][$b]."'");
     foreach ($result as $row) {
         $trackersData=$row['trackerid'];
