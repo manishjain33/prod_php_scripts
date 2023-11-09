@@ -403,5 +403,5 @@ for ($b=0;$b<=1;$b++){
         $trackersData[]=$row['trackerid'];
     }
 }
-echo $trackersData->uuid;
+print_r($trackersData['uuid']);
 ?>
