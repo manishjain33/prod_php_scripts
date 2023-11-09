@@ -402,6 +402,32 @@ for ($b=0;$b<=1;$b++){
     foreach ($result as $row) {
         $trackersData=$row['trackerid'];
     }
+    $curl = curl_init();
+
+    curl_setopt_array($curl, array(
+      CURLOPT_URL => '172.16.1.7:12003/api/vehicle/renew',
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_ENCODING => '',
+      CURLOPT_MAXREDIRS => 10,
+      CURLOPT_TIMEOUT => 0,
+      CURLOPT_FOLLOWLOCATION => true,
+      CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+      CURLOPT_CUSTOMREQUEST => 'POST',
+      CURLOPT_POSTFIELDS =>'{
+        "trackerId": ["'.$trackersData.'"]
+    }',
+      CURLOPT_HTTPHEADER => array(
+        'Content-Type: application/json',
+        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OTc3MDBkOWI5OTZhNzEwMzA4YjQ1NzAiLCJpYXQiOjE2OTk1MjE1MDQsImV4cCI6MTY5OTU2NDcwNH0.QR6cpmAXFQr2F4DGj7bVWCOcr2xmgWNzK6E8Ee_qURI'
+      ),
+    ));
+    
+    $response = curl_exec($curl);
+    
+    curl_close($curl);
+    print_r($imei[0][$b]);
+    echo " - ".$response." - ";
+    echo $trackersData."<br>";
 }
-echo $trackersData;
+
 ?>
