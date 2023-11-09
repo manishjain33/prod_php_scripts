@@ -396,8 +396,8 @@ $imei[]=array(867604058764946,
 863257067827792,
 863257067883944,
 866770056742951,
-864145065185397,);
-echo "SELECT trackerid FROM trackers_by_imei WHERE imei ='".$imei[$b]."'";
+864145065185397);
+echo "SELECT trackerid FROM trackers_by_imei WHERE imei ='".$imei[0]."'";
 die();
 for ($b=0;$b<=1;$b++){
     echo $result  = $session->execute("SELECT trackerid FROM trackers_by_imei WHERE imei ='".$imei[$b]."'");
