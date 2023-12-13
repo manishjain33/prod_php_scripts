@@ -22,7 +22,7 @@ for ($b=0;$b<=count($imei[0]);$b++){
     }',
       CURLOPT_HTTPHEADER => array(
         'Content-Type: application/json',
-        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OTc3MDBkOWI5OTZhNzEwMzA4YjQ1NzAiLCJpYXQiOjE3MDA1ODQ3NjIsImV4cCI6MTcwMDYyNzk2Mn0.deQkUCgjSIrhpxGJ7r-CF4Oqc3NzYuTLlZjt2N3mNT0'
+        'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1OTc3MDBkOWI5OTZhNzEwMzA4YjQ1NzAiLCJpYXQiOjE3MDI0NTQ1NzcsImV4cCI6MTcwMjQ5Nzc3N30.55nrg_BtqC8gwS4xGf6p5AmX-6n6OluHJnFvekTlheY'
       ),
     ));
     
