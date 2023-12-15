@@ -38,8 +38,8 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "Profile and Tradelicense!",
-          "message": "data:text/html,Dear Customer,<br>This email is a reminder to complete or update <b>Manage Your Profile Information</b> in the SecurePath support panel profile module. Ensure the form is always filled out correctly and with the most recent information.</br>Send a copy of your most recent trade license with the subject <b>trade license</b> to the support center as well. Make sure you provide the appropriate trade license for those emirates if any vendor is a part of SecurePath Basic under separate emirates.<br>Waiting for your update !"
+          "subject": "Scheduled System Maintenance!",
+          "message": "data:text/html,Dear Customer,<br>You might be experiencing a service interruption of 30 minutes tomorrow 16/12/2023 9.00 am to 9.30 am due to a scheduled system maintenance.<br>We sincerely apologize for any inconvenience that this may have caused you."
       }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
