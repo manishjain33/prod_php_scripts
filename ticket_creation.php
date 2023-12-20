@@ -38,7 +38,7 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "Scheduled System Maintenance!",
+          "subject": "Submission of Emirates ID of Technicians",
           "message": "data:text/html,Dear Customer,<br>Notice:We kindly request that all our SecurePath Premium Vendors submit a comprehensive list of the official technicians who are currently employed under your visas. This is essential for maintaining our standards of service and operational efficiency.Additionally, for verification purposes, please attach a copy of both the front and back of each technicians Emirates ID (EID).Please ensure that the submitted information is accurate and up-to-date. We appreciate your prompt attention to this matter and expect all relevant documents to be submitted by 21st December 2023."
       }',
         CURLOPT_HTTPHEADER => array(
