@@ -10,7 +10,7 @@ if($dbhandle->connect_errno > 0)
     {
         die('Unable to connect to database' . $dbhandle->connect_error);
     }
-$sql = "SELECT * from support";
+$sql = "SELECT * from support where category = 'Premium'";
 
 $result = mysqli_query($dbhandle,$sql);
 while ($trackerid = mysqli_fetch_assoc($result))
@@ -39,7 +39,7 @@ for ($a=0;$a<=count($tidData);$a++){
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
           "subject": "Scheduled System Maintenance!",
-          "message": "data:text/html,Dear Customer,<br>System maintenance has been completed successfully and the service will reinitiate by 7.30pm.<br>Sorry for the inconvenience caused."
+          "message": "data:text/html,Dear Customer,<br>Notice:We kindly request that all our SecurePath Premium Vendors submit a comprehensive list of the official technicians who are currently employed under your visas. This is essential for maintaining our standards of service and operational efficiency.Additionally, for verification purposes, please attach a copy of both the front and back of each technicians Emirates ID (EID).Please ensure that the submitted information is accurate and up-to-date. We appreciate your prompt attention to this matter and expect all relevant documents to be submitted by 21st December 2023."
       }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
