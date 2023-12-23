@@ -10,8 +10,8 @@ if($dbhandle->connect_errno > 0)
     {
         die('Unable to connect to database' . $dbhandle->connect_error);
     }
-$sql = "SELECT * from support where category = 'Premium'";
-
+//$sql = "SELECT * from support where category = 'Premium'";
+$sql = "SELECT * from support";
 $result = mysqli_query($dbhandle,$sql);
 while ($trackerid = mysqli_fetch_assoc($result))
 {
