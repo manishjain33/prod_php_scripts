@@ -38,7 +38,7 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "Submission of Emirates ID of Technicians",
+          "subject": "Service Interruption Notice",
           "message": "data:text/html,Dear Customer,<br>Dear customer,<br>The service interruption will be normalized at 1PM. <br>Sorry for the inconvenience caused."
       }',
         CURLOPT_HTTPHEADER => array(
