@@ -38,9 +38,9 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "Service Interruption Notice",
-          "message": "data:text/html,Dear Customer,<br>Dear customer,<br>The service interruption will be normalized at 1PM. <br>Sorry for the inconvenience caused."
-      }',
+          "subject": "Trade license & Profile update !",
+          "message": "data:text/html,Dear Customer,<br>Dear customer,<br>Kindly share the latest trade license copy. Also, update the latest information in the support profile.<br>Waiting for your update."
+        }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
           'Content-Type: application/json',
