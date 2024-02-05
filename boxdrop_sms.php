@@ -13,7 +13,7 @@ while ($trackersRow = mysqli_fetch_assoc($trackers_result))
   {
     $trackersData[]=$trackersRow;
   }
-  $sleep=0;
+  $sleep=10;
 //for ($a=0;$a<=1;$a++){
 for ($a=0;$a<=count($trackersData);$a++){
     $msg="BoxDrop Notice: From 7th Feb 2024, BoxDrop services will be subject to charges. For top-up instructions, please visit: https://boxdrop.ae/doc/BDpay_v1.pdf .";
