@@ -38,8 +38,8 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "Trade license & Profile update !",
-          "message": "data:text/html,Dear Customer,<br>Dear customer,<br>Kindly share the latest trade license copy. Also, update the latest information in the support profile.<br>Waiting for your update."
+          "subject": "System Maintenance !",
+          "message": "data:text/html,Dear Customer,<br>Dear customer,<br>You might be experiencing a service interruption at SecurePath system till 11.00 PM today 09/03/2024 due to a urgent .<system maintenancebr>We appreciate your understanding for any inconvenience this may cause."
         }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
