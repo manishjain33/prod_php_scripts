@@ -38,8 +38,8 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "System Maintenance !",
-          "message": "data:text/html,Dear Customer,<br>Dear customer,<br>You might be experiencing a service interruption at SecurePath system till 11.00 PM today 09/03/2024 due to a urgent .<system maintenancebr>We appreciate your understanding for any inconvenience this may cause."
+          "subject": "NOTICE !",
+          "message": "data:text/html,Dear customer,<br>Please find the HIGH PRIORITY NOTICE RELEASING ON 21/03/2024 !<br>Kindly make sure the correct trade license number, traffic file number, and plate number are added to each organization & vehicle to avoid any inconvenience during renewal at RTA. Any wrong information in the SecurePath system will lead to the rejection from RTA.<br><br>Please correct all details within 5 working days!<br><br>"
         }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
