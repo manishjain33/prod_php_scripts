@@ -39,7 +39,7 @@ for ($a=0;$a<=count($tidData);$a++){
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
           "subject": "NOTICE !",
-          "message": "data:text/html,Dear customer,<br>Please find the HIGH PRIORITY NOTICE RELEASING ON 21/03/2024 !<br>Kindly make sure the correct trade license number, traffic file number, and plate number are added to each organization & vehicle to avoid any inconvenience during renewal at RTA. Any wrong information in the SecurePath system will lead to the rejection from RTA.<br><br>Please correct all details within 5 working days!<br><br>"
+          "message": "data:text/html,Dear customer,<br>Due to maintenance the services will interrupt for 2hr.<br>Sorry for the inconvenience caused. <br><br>"
         }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
