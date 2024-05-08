@@ -39,7 +39,7 @@ for ($a=0;$a<=count($tidData);$a++){
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
           "subject": "NOTICE !",
-          "message": "data:text/html,Dear customer,<br>Due to maintenance the services will interrupt till 5PM.<br>Sorry for the inconvenience caused. <br><br>"
+          "message": "data:text/html,Dear customer,<br>Due to maintenance the services will interrupt till 01:00PM.<br>Sorry for the inconvenience caused. <br><br>"
         }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
