@@ -38,8 +38,8 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "NOTICE !",
-          "message": "data:text/html,Dear customer,<br>Due to maintenance the services will interrupt till 01:00PM.<br>Sorry for the inconvenience caused. <br><br>"
+          "subject": "mobilization/ immobilization count  !",
+          "message": "data:text/html,Dear customer,<br>Kindly send number of the units installed in SecurePath using relay (mobilization/ immobilization). Kindly mention the counts to the respective accounts (Dubai, Sharjah, Premium). <br><br>"
         }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
