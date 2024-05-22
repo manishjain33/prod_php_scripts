@@ -22,22 +22,7 @@ $mail = new PHPMailer();
 
   $mail->Subject = "Compliance with Standard Procedures (SP) and Installation of SecurePath Premium Tracking Devices, to comply with SHAHIN regulations.";
 
-  $body="Dear Customer,<br>"
-         ."<p>Company Name : </br>
-           Contact Person : </br>
-           Email: </br>
-           Contact No : </br>
-           Vehicle Count : </br></br></p>" 
-         ."<p>TIn our persistent drive to achieve the pinnacle of safety, security, and operational integrity standards, it is imperative that all specified vehicles align with the stipulated Standard Procedures (SP).</p>"
-          ."<p>Furthering this objective, the SHAHIN regulations mandate that all individuals or entities owning freight transportation vehicles and trucks registered within the Emirates of Dubai, register their respective vehicles with the SHAHIN online portal system.</p>"
-          ."<p>SHAHIN Portal Details: <a href='https://shahin.securepath.ae'>https://shahin.securepath.ae</a></p>"
-          ."<p><b>Action Items:</b></p>"
-          ."<p><ol><li>Review the status of each vehicle vis-à-vis our Standard Procedures (SP).</li>"
-          ."<br>Vehicles Requiring GPS Tracking by 15th September 2023:<br>"
-          ."<table><tr><td>S.No</td><td>License Plate</td><td>Emirates</td></tr><tr></tr></table>"
-          ."<p>SecurePath Premium Vendors:<br><a href='http://securepath.ae/securepathpremium'>http://securepath.ae/securepathpremium</a></p>"
-          ."<p>For all questions and complaints, kindly contact: care@securepath.ae.</p>"
-          ."<p>Regards,<br><br>Team Shahin</p>";
+  $body="Hi this is test,<br>";
 
   $mail->Body    = $body;
   //$mail->AltBody = "This is the test mail for checking the SMTP settings.";
