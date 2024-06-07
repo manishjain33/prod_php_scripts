@@ -61,7 +61,7 @@ for($a=0;$a<=count($data->chassis);$a++){
         $response = curl_exec($curl);
 
         curl_close($curl);
-        echo $response;
+        echo $response."\n";
 
     }
 }
