@@ -32,7 +32,8 @@ for($a=0;$a<=count($data->chassis);$a++){
     // print_r($sim_array[$a]);
     $result  = $session->execute("select trackerid from vehicles_by_vehicleid where chasis_number='".$data->chassis[$a]."' allow filtering");
     foreach ($result as $row) {
-        echo $row['trackerid']."\n";
+        echo $data->chassis[$a]."\n";
+        sleep(5);
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
