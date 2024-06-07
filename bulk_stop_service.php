@@ -14,7 +14,7 @@ CURLOPT_FOLLOWLOCATION => true,
 CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
 CURLOPT_CUSTOMREQUEST => 'POST',
 CURLOPT_POSTFIELDS =>'{
-    "email": "$data->email",
+    "email": "'.$data->email.'",
     "password": "Ql1Z48ENk%8ER7Q9h7ChxP65BPT%"
 }',
 CURLOPT_HTTPHEADER => array(
