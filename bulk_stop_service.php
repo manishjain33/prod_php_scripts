@@ -53,7 +53,7 @@ for($a=0;$a<=count($data->chassis);$a++){
         }',
         CURLOPT_HTTPHEADER => array(
             'Content-Type: application/json',
-            'Authorization: Bearer $token'
+            'Authorization: Bearer '.$token
         ),
         ));
 
