@@ -23,10 +23,9 @@ CURLOPT_HTTPHEADER => array(
 ),
 ));
 
-$response = curl_exec($curl);
+$token = curl_exec($curl);
 
 curl_close($curl);
-echo $response;
 
 for($a=0;$a<=count($data->chassis);$a++){
      //echo "chassis - ".$data->chassis[$a]."<br>";
