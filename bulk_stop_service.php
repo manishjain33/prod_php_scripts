@@ -33,7 +33,35 @@ for($a=0;$a<=count($data->chassis);$a++){
     // print_r($sim_array[$a]);
     $result  = $session->execute("select trackerid from vehicles_by_vehicleid where chasis_number='".$data->chassis[$a]."' allow filtering");
     foreach ($result as $row) {
-        echo $row['trackerid'].",";
+        echo $row['trackerid']."\n";
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+        CURLOPT_URL => '172.16.1.7:12003/api/vehicle/deactivate',
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_ENCODING => '',
+        CURLOPT_MAXREDIRS => 10,
+        CURLOPT_TIMEOUT => 0,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        CURLOPT_CUSTOMREQUEST => 'POST',
+        CURLOPT_POSTFIELDS =>'{
+            "notes": "'.$data->notes.'",
+            "reason": "Others",
+            "trackerId": [
+                '.$row['trackerid'].'"
+            ]
+        }',
+        CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json',
+            'Authorization: Bearer '.$token
+        ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+        echo $response;
 
     }
 }
