@@ -33,7 +33,7 @@ for($a=0;$a<=count($data->chassis);$a++){
     $result  = $session->execute("select trackerid from vehicles_by_vehicleid where chasis_number='".$data->chassis[$a]."' allow filtering");
     foreach ($result as $row) {
         echo $data->chassis[$a]."-";
-        sleep(5);
+        sleep(2);
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
