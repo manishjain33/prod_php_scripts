@@ -1,3 +1,5 @@
 <?php
 include('connProd.php') ;
-print_r($_POST);
+$rawdata = file_get_contents("php://input");
+$data=json_decode($rawdata);
+echo $data;
