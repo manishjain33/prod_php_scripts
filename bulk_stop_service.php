@@ -48,7 +48,7 @@ for($a=0;$a<=count($data->chassis);$a++){
             "notes": "'.$data->notes.'",
             "reason": "Others",
             "trackerId": [
-                '.$row['trackerid'].'"
+                "'.$row['trackerid'].'"
             ]
         }',
         CURLOPT_HTTPHEADER => array(
