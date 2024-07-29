@@ -27,8 +27,8 @@ while ($usermail = mysqli_fetch_assoc($result))
 }
 mysqli_close($dbhandle);
 
-for ($a=0;$a<count($user);$a++){
-//for ($a=0;$a<1;$a++){
+//for ($a=0;$a<count($user);$a++){
+for ($a=0;$a<1;$a++){
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
 
@@ -45,9 +45,9 @@ for ($a=0;$a<count($user);$a++){
 
         //Recipients
         $mail->setFrom('donotreply@boxdrop.ae', 'BoxDrop');
-        $mail->addAddress(strtolower($user[$a]['email']));     //Add a recipient
+        //$mail->addAddress(strtolower($user[$a]['email']));     //Add a recipient
         //$mail->addAddress('shareef@emcode.ae');               //Name is optional
-        //$mail->addAddress('manish.j@emcode.ae');               //Name is optional
+        $mail->addAddress('manish.j@emcode.ae');               //Name is optional
         $mail->addReplyTo('donotreply@boxdrop.ae', 'Information');
         //$mail->addCC('');
         //$mail->addBCC('zainudheen.f@emcode.ae');
@@ -59,15 +59,14 @@ for ($a=0;$a<count($user);$a++){
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'BoxDrop Login Information';
-        $mail->Body    = 'Dear Customer,<br>'
-                         .'<p>Under the initiative of SIRA ( Security Industry Regulatory Agency), to improve the security of valuable goods delivery services in Dubai, We are delighted to extend an exclusive invitation to you and your esteemed company to join our new and groundbreaking Last Minute Deliver App for Precious Items, called BoxDrop.</p>'
-                         .'<p>You can use the following information to login:</p>'
-                         .'<p>Registered mobile number: '.$user[$a]['mobile'].'</p>'
-                         .'<p>Registered email ID: '.$user[$a]['email'].'</p>'
-                         .'<p>During Phase 1, we are excited to offer this service exclusively in the Gold Souk area, catering specifically to the transfer of goods within the souk. This localized approach guarantees efficient and reliable delivery within the designated zone.</p>'
-                         .'<p>Please do not hesitate to reach out to us at care@boxdrop.ae, if you have any questions or require further assistance. We are here to support you every step of the way.</p>'
-                         .'<p>Thank you for considering our invitation. We look forward to welcoming your esteemed company to our exclusive network of trusted money exchange and jewelers.</p>'
+        $mail->Subject = 'Exciting News: BoxDrop 2.0 is Here!';
+        $mail->Body    = 'Dear Valued User,<br>'
+                         .'<p>We are thrilled to announce the launch of BoxDrop 2.0! With your invaluable feedback, we have made several enhancements to ensure an even better experience for delivering valuables such as jewelry, gold, money, and watches from one shop to another.</p>'
+                         .'<p>Attached to this email is a comprehensive "How to Use" document that will guide you through the features and functionalities of BoxDrop 2.0. We encourage you to go review it to make the most out of the new version.</p>'
+                         .'<p><li><a href=http://securepath.ae/boxdrop/Admin_Onboarding.pdf>Admin Onboarding</a></li><li><a href=http://securepath.ae/boxdrop/How_to_use.pdf>How to Use</a></li></p>'
+                         .'<p>Kindly note that all users of BoxDrop 1.0 will need to reinstall the app. You can use the same login credentials you used during BoxDrop 1.0.</p>'
+                         .'<p>Should you have any questions or need further assistance, please do not hesitate to reach out to us at care@boxdrop.ae. Our support team is always ready to help you.</p>'
+                         .'<p>Thank you for choosing BoxDrop. We look forward to continuing to serve you with excellence.</p>'
                          .'<p>Best regards,<br><br>Team BoxDrop</p>';
         $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
