@@ -63,7 +63,7 @@ for ($a=0;$a<1;$a++){
         $mail->Body    = 'Dear Valued User,<br>'
                          .'<p>We are thrilled to announce the launch of BoxDrop 2.0! With your invaluable feedback, we have made several enhancements to ensure an even better experience for delivering valuables such as jewelry, gold, money, and watches from one shop to another.</p>'
                          .'<p>Attached to this email is a comprehensive "How to Use" document that will guide you through the features and functionalities of BoxDrop 2.0. We encourage you to go review it to make the most out of the new version.</p>'
-                         .'<p><li><a href=http://securepath.ae/boxdrop/Admin_Onboarding.pdf>Admin Onboarding</a></li><li><a href=http://securepath.ae/boxdrop/How_to_use.pdf>How to Use</a></li></p>'
+                         .'<p><li><a href=https://boxdrop.ae/doc/Admin_Onboarding.pdf>Admin Onboarding</a></li><li><a href=https://boxdrop.ae/doc/How_to_use.pdf>How to Use</a></li></p>'
                          .'<p>Kindly note that all users of BoxDrop 1.0 will need to reinstall the app. You can use the same login credentials you used during BoxDrop 1.0.</p>'
                          .'<p>Should you have any questions or need further assistance, please do not hesitate to reach out to us at care@boxdrop.ae. Our support team is always ready to help you.</p>'
                          .'<p>Thank you for choosing BoxDrop. We look forward to continuing to serve you with excellence.</p>'
