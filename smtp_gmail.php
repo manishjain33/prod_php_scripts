@@ -18,7 +18,7 @@ if($dbhandle->connect_errno > 0)
     {
         die('Unable to connect to database' . $dbhandle->connect_error);
     }
-$sql = "SELECT * from users where mobile!=0";
+$sql = "SELECT * from users_final";
 
 $result = mysqli_query($dbhandle,$sql);
 while ($usermail = mysqli_fetch_assoc($result))
@@ -27,14 +27,14 @@ while ($usermail = mysqli_fetch_assoc($result))
 }
 mysqli_close($dbhandle);
 
-//for ($a=0;$a<count($user);$a++){
-for ($a=0;$a<1;$a++){
+for ($a=0;$a<count($user);$a++){
+//for ($a=0;$a<1;$a++){
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
 
     try {
         //Server settings
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+        //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
@@ -45,9 +45,9 @@ for ($a=0;$a<1;$a++){
 
         //Recipients
         $mail->setFrom('donotreply@boxdrop.ae', 'BoxDrop');
-        //$mail->addAddress(strtolower($user[$a]['email']));     //Add a recipient
-        $mail->addAddress('zainudheen.f@emcode.ae');               //Name is optional
-        $mail->addAddress('manish.j@emcode.ae');               //Name is optional
+        $mail->addAddress(strtolower($user[$a]['email']));     //Add a recipient
+        //$mail->addAddress('zainudheen.f@emcode.ae');               //Name is optional
+        //$mail->addAddress('manish.j@emcode.ae');               //Name is optional
         $mail->addReplyTo('donotreply@boxdrop.ae', 'Information');
         //$mail->addCC('');
         //$mail->addBCC('zainudheen.f@emcode.ae');
