@@ -46,7 +46,7 @@ for ($a=0;$a<1;$a++){
         //Recipients
         $mail->setFrom('donotreply@boxdrop.ae', 'BoxDrop');
         //$mail->addAddress(strtolower($user[$a]['email']));     //Add a recipient
-        $mail->addAddress('zainudheen faiz <zainudheen.f@emcode.ae>');               //Name is optional
+        $mail->addAddress('zainudheen.f@emcode.ae');               //Name is optional
         $mail->addAddress('manish.j@emcode.ae');               //Name is optional
         $mail->addReplyTo('donotreply@boxdrop.ae', 'Information');
         //$mail->addCC('');
