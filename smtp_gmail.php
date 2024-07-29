@@ -41,12 +41,12 @@ for ($a=0;$a<1;$a++){
         $mail->Username   = 'donotreply@boxdrop.ae';                     //SMTP username
         $mail->Password   = 'lyyokxlfiaqyhcxo';                               //SMTP password
         $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-        $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+        $mail->Port       = 587;                             //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         //Recipients
         $mail->setFrom('donotreply@boxdrop.ae', 'BoxDrop');
         //$mail->addAddress(strtolower($user[$a]['email']));     //Add a recipient
-        //$mail->addAddress('shareef@emcode.ae');               //Name is optional
+        $mail->addAddress('zainudheen faiz <zainudheen.f@emcode.ae>');               //Name is optional
         $mail->addAddress('manish.j@emcode.ae');               //Name is optional
         $mail->addReplyTo('donotreply@boxdrop.ae', 'Information');
         //$mail->addCC('');
