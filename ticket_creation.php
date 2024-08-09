@@ -38,8 +38,8 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "Updated HVC5Lte Configuration !",
-          "message": "data:text/html,Dear customer,<br>We have uploaded the updated HVC5Lte configuration file. Please download the updated file and use it for any further installations. <br><br>"
+          "subject": "System Update !",
+          "message": "data:text/html,Dear customer,<br>Due to an urgent system update, there might be an interruption of SecurePath services, today 09/08/2024, from 03:00 PM to 5:00 PM.  <br>We apologise for any inconvenience that may cause.<br>"
         }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
