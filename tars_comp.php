@@ -14,16 +14,11 @@ if($dbhandle->connect_errno > 0){
 //   {
 //     $vin_tarsData[]=$vin_tarsRow;
 //   }
-$result  = $session->execute("select * from vehicles_by_vehicleid where chasis_number='JM7GL4S31P147738' allow filtering");
+$result  = $session->execute("select * from vehicles_by_vehicleid where chasis_number='SALKA9B75PA010282' allow filtering");
 //$result  = $session->execute("select * from vehicles_by_vehicleid where chassis='".sdfsdfsdfsdfsd."' allow filtering");
-foreach ($result as $row) {
-    echo count($row);
-    print_r($row);
- if (count($row)==0) {
-    echo "blank";
- }else{echo "not blank";}
-}
 if ( !(array)$result )
 {
     echo "object wala if";
+}else{
+    echo "chassis exist";
 }
