@@ -16,13 +16,12 @@ if($dbhandle->connect_errno > 0){
 //   }
 $result  = $session->execute("select * from vehicles_by_vehicleid where chasis_number='SALKA9B75PA010282' allow filtering");
 //$result  = $session->execute("select * from vehicles_by_vehicleid where chassis='".sdfsdfsdfsdfsd."' allow filtering");
-var_dump($result);
-if ( !(array)$result )
-{
-    echo "object wala if";
+$arr = (array)$result;
+if (!$arr) {
+    echo "object wala if <br> \n";
 }else{
-    echo "chassis exist";
-}
+    echo "chassis exist <br> \n";
+}  
 foreach ($result as $row) {
     print_r($row['category']);
 }
