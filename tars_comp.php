@@ -14,7 +14,7 @@ while ($vin_tarsRow = mysqli_fetch_assoc($vin_tars_result))
   {
     $vin_tarsData[]=$vin_tarsRow;
   }
-for($a=0;$a<2;$a++){
+for($a=0;$a<4;$a++){
 //for($a=0;$a<count($vin_tarsData);$a++){
     $result  = $session->execute("select * from vehicles_by_vehicleid where chasis_number='".$vin_tarsData[$a]["vin"]."' allow filtering");
     foreach ($result as $row) {
@@ -26,8 +26,8 @@ for($a=0;$a<2;$a++){
             echo $vin_tars_update = "UPDATE vin SET remark =  'exist' WHERE sno =".$vin_tarsData[$a]["sno"];
             $vin_tars_result_update = mysqli_query($dbhandle, $vin_tars_update);
         } 
+        print_r($row['category']);
     }
     print_r($vin_tarsData[$a]["vin"]);
     echo "<br> \n";
-    print_r($row['category']);
 }
