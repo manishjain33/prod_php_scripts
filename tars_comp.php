@@ -23,5 +23,9 @@ if (!$arr) {
     echo "chassis exist <br> \n";
 }  
 foreach ($result as $row) {
-    print_r($row['category']);
+    if($row['category']==''){
+        echo "object wala if <br> \n";
+    }else{
+        echo "chassis exist <br> \n";
+    } 
 }
