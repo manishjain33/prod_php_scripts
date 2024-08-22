@@ -16,8 +16,8 @@ if($dbhandle->connect_errno > 0){
 //   }
 $result  = $session->execute("select * from vehicles_by_vehicleid where chasis_number='JM7GL4S31P147738' allow filtering");
 //$result  = $session->execute("select * from vehicles_by_vehicleid where chassis='".sdfsdfsdfsdfsd."' allow filtering");
-echo count($result);
 foreach ($result as $row) {
+    echo count($row);
  if (count($row)==0) {
     echo "blank";
  }else{echo "not blank";}
