@@ -8,24 +8,24 @@ $selected = mysqli_select_db($dbhandle,'tars_vin') ;
 if($dbhandle->connect_errno > 0){
   die('Unable to connect to database' . $dbhandle->connect_error);
 }
-// $vin_tars = "select * from vin";
-// $vin_tars_result = mysqli_query($dbhandle, $vin_tars);
-// while ($vin_tarsRow = mysqli_fetch_assoc($vin_tars_result))
-//   {
-//     $vin_tarsData[]=$vin_tarsRow;
-//   }
-$result  = $session->execute("select * from vehicles_by_vehicleid where chasis_number='SALKA9B75PA010282' allow filtering");
-//$result  = $session->execute("select * from vehicles_by_vehicleid where chassis='".sdfsdfsdfsdfsd."' allow filtering");
-$arr = (array)$result;
-if (!$arr) {
-    echo "object wala if <br> \n";
-}else{
-    echo "chassis exist <br> \n";
-}  
-foreach ($result as $row) {
-    if($row['category']==''){
-        echo "object wala if <br> \n";
-    }else{
-        echo "chassis exist <br> \n";
-    } 
+$vin_tars = "select * from vin";
+$vin_tars_result = mysqli_query($dbhandle, $vin_tars);
+while ($vin_tarsRow = mysqli_fetch_assoc($vin_tars_result))
+  {
+    $vin_tarsData[]=$vin_tarsRow;
+  }
+for($a=0;$a<2;$a++){
+//for($a=0;$a<count($vin_tarsData);$a++){
+    $result  = $session->execute("select * from vehicles_by_vehicleid where chasis_number='".$vin_tarsData[$i]["vin"]."' allow filtering");
+    foreach ($result as $row) {
+        if($row['category']==''){
+            $vin_tars_update = "UPDATE vin SET remark =  'not_exist' WHERE sno =".$vin_tarsData[$i]["sno"];
+            $vin_tars_result_update = mysqli_query($dbhandle, $vin_tars_update);
+        }else{
+            $vin_tars_update = "UPDATE vin SET remark =  'exist' WHERE sno =".$vin_tarsData[$i]["sno"];
+            $vin_tars_result_update = mysqli_query($dbhandle, $vin_tars_update);
+        } 
+    }
+    print_r($vin_tarsData[$i]["vin"]);
+    echo "<br> \n";
 }
