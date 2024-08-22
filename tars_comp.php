@@ -23,3 +23,6 @@ if ( !(array)$result )
 }else{
     echo "chassis exist";
 }
+foreach ($result as $row) {
+    print_r($row['category']);
+}
