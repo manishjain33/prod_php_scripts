@@ -1,5 +1,5 @@
 <?php
-include 'connProd.php' ;
+include ('connProd.php') ;
 $username = "dps";
 $password = "dps123";
 $hostname = "172.16.1.4";  
