@@ -21,11 +21,13 @@ for($a=0;$a<2;$a++){
         if($row['category']==null){
             echo $vin_tars_update = "UPDATE vin SET remark =  'not_exist' WHERE sno =".$vin_tarsData[$a]["sno"];
             $vin_tars_result_update = mysqli_query($dbhandle, $vin_tars_update);
-        }else{
+        }
+        if($row['category']!=null){
             echo $vin_tars_update = "UPDATE vin SET remark =  'exist' WHERE sno =".$vin_tarsData[$a]["sno"];
             $vin_tars_result_update = mysqli_query($dbhandle, $vin_tars_update);
         } 
     }
     print_r($vin_tarsData[$a]["vin"]);
     echo "<br> \n";
+    print_r($row['category']);
 }
