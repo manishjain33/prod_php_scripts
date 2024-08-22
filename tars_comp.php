@@ -18,7 +18,12 @@ $result  = $session->execute("select * from vehicles_by_vehicleid where chasis_n
 //$result  = $session->execute("select * from vehicles_by_vehicleid where chassis='".sdfsdfsdfsdfsd."' allow filtering");
 foreach ($result as $row) {
     echo count($row);
+    print_r($row);
  if (count($row)==0) {
     echo "blank";
  }else{echo "not blank";}
+}
+if ( !(array)$result )
+{
+    echo "object wala if";
 }
