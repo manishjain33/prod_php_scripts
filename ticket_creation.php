@@ -38,8 +38,8 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "Notice!!",
-          "message": "data:text/html,Dear customer,<br>Please include a copy of the most recent trade license. If you offer your services in more than one emirate, please remember to share the specific trade license as well. Update the support profile with the most recent information as well. Waiting for your update.<br>"
+          "subject": "Renewal notification to avoid fine",
+          "message": "data:text/html,Dear Customer,<br>This notification is to let you know that September 30, 2024, is the deadline for renewing any expired vehicles under Securepath/SecurePath Premium. Please be advised that any vehicles that are expired and are not reported by the specified date will automatically be fined without additional warning.<br>Any incomplete or erroneous information about a vehicle record held by any organization—such as the trade license number, traffic file number, email address, contact number, or vehicle details—will prohibit the RTA from being renewed, and it is imperative that the proper information be updated immediately.<br>Please coordinate with the respective clients in order to facilitate the renewal and data correction.<br>Please follow the rules and guidelines. We value your cooperation in order to minimize any disruption.<br>Should you have any queries or require further assistance, please do not hesitate to contact us.<br>Best Regards,<br>SecurePath Customer Care<br>"
         }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
