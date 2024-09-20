@@ -16,6 +16,7 @@ while ($vin_tarsRow = mysqli_fetch_assoc($vin_tars_result))
   }
 for($a=0;$a<4;$a++){
 //for($a=0;$a<count($vin_tarsData);$a++){
+    echo "select * from vehicles_by_vehicleid where chasis_number='".$vin_tarsData[$a]["vin"]."' allow filtering";
     $result  = $session->execute("select * from vehicles_by_vehicleid where chasis_number='".$vin_tarsData[$a]["vin"]."' allow filtering");
     foreach ($result as $row) {
         if($row['category']==null){
