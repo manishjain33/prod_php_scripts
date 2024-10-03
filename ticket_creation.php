@@ -10,8 +10,8 @@ if($dbhandle->connect_errno > 0)
     {
         die('Unable to connect to database' . $dbhandle->connect_error);
     }
+//$sql = "SELECT * from support where category = 'Premium'";
 $sql = "SELECT * from support";
-
 $result = mysqli_query($dbhandle,$sql);
 while ($trackerid = mysqli_fetch_assoc($result))
 {
@@ -38,9 +38,9 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "Release Notification - Command module !",
-          "message": "data:text/html,Dear Customer,<br>This is to let you know that the Command module is currently operational.<br><br>Default Vehicle immobilization and remobilization are available via SecurePath instructions.<br><br>Select the appropriate course of action, then click the <b>Send command</b> button. Once the instruction has been sent to the unit, you will see a <b>Success</b> message on the panel if there was no error; otherwise, you will see a failure message. You can try sending the message again or get in touch with SecurePath support if it fails.<bnr><br>Immobilize Vehicle - This will put a stop to the car.<br><br>Remobilize  Vehicle - Will start the car after immobilization."
-      }',
+          "subject": "SecurePath feature enhancement notice !",
+          "message": "data:text/html,Dear Customer,<br>The SecurePath application has been improved with the following modifications & this ticket is to inform you the same.<br> Please use the landing dashboard to download the dead or failing devices. After clicking on the pie chart, select "Download csv" to start the file download.<br> Please click "Download csv" to begin downloading the active and expired units from the organization -> tracker module.<br>"
+        }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
           'Content-Type: application/json',

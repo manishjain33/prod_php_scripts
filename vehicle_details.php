@@ -19,6 +19,7 @@ echo "<table>";
 for ($i=0;$i<=count($trackersData);$i++){
 //for ($i=0;$i<=3;$i++){
     echo "<tr>";
+    //echo "select * from vehicles_by_vehicleid where trackerid=".$trackersData[$i]["tid"]." allow filtering";
   $result  = $session->execute("select * from vehicles_by_vehicleid where trackerid=".$trackersData[$i]["tid"]." allow filtering");
   foreach ($result as $row) {
       $chassis[]=$row['chasis_number'];
