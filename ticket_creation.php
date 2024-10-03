@@ -19,8 +19,8 @@ while ($trackerid = mysqli_fetch_assoc($result))
 }
 mysqli_close($dbhandle);
 //print_r($tidData);
-for ($a=0;$a<=1;$a++){
-//for ($a=0;$a<=count($tidData);$a++){
+//for ($a=0;$a<=1;$a++){
+for ($a=0;$a<=count($tidData);$a++){
     $curl = curl_init();
     curl_setopt_array($curl, array(
         CURLOPT_URL => '172.16.1.2/api/http.php/tickets.json',
@@ -38,8 +38,8 @@ for ($a=0;$a<=1;$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "Test",
-          "message": "data:text/html,Dear Customer,<br>Test.<br>"
+          "subject": "SecurePath feature enhancement notice !",
+          "message": "data:text/html,Dear Customer,<br>The SecurePath application has been improved with the following modifications & this ticket is to inform you the same.<br> Please use the landing dashboard to download the dead or failing devices. After clicking on the pie chart, select Download csv to start the file download.<br> Please click Download csv to begin downloading the active and expired units from the organization -> tracker module.<br>"
         }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
