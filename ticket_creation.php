@@ -38,8 +38,8 @@ for ($a=0;$a<=count($tidData);$a++){
           "name": "'.$tidData[$a]["vendor"].'",
           "email": "'.$tidData[$a]["email"].'",
           "phone": "111111111",
-          "subject": "Trace5 & Trace5-LTM configuration update",
-          "message": "data:text/html,Dear Customer,<br>This is inform you that you may experience slowness/delay in the Securepath application for 2-4 hours due to an urgent system maintenance.<br>We appretiate your understanding in this matter.<br>"
+          "subject": "SecurePath feature enhancement notice !",
+          "message": "data:text/html,Dear Customer,<br>The SecurePath application has been improved with the following modifications & this ticket is to inform you the same.<br>Please use the landing dashboard to download the dead or failing devices. After clicking on the pie chart, select "Download csv" to start the file download.<br>Please click "Download csv" to begin downloading the active and expired units from the organization -> tracker module.<br>"
         }',
         CURLOPT_HTTPHEADER => array(
           'x-api-key: 2B87F5FC3EBAC93E478ECCDAC5268E3C',
