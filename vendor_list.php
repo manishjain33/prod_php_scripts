@@ -1,0 +1,16 @@
+<?php
+$username = "dps";
+$password = "dps123";
+$hostname = "localhost";  
+$dbhandle = mysqli_connect($hostname, $username, $password) ;
+$selected = mysqli_select_db($dbhandle,'vendor') ;
+if($dbhandle->connect_errno > 0){
+  die('Unable to connect to database' . $dbhandle->connect_error);
+}
+$vendors = "select * from vendor_list where emirates=".$_GET["em"];
+$vendors_result = mysqli_query($dbhandle, $vendors);
+while ($vendorsRow = mysqli_fetch_assoc($vendors_result))
+  {
+    $vendorsData[]=$vendorsRow;
+  }
+  print_r($vendorsData);
