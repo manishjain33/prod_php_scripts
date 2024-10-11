@@ -22,4 +22,5 @@ while ($vendorsRow = mysqli_fetch_assoc($vendors_result))
     $vendorsData[]=$vendorsRow;
   }
   //print_r($vendorsData);
-echo json_encode($vendorsData);
+$aa=json_encode($vendorsData);
+var_dump($aa);
