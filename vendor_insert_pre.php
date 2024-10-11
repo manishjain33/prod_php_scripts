@@ -19,7 +19,7 @@ if (!$selected) {
 }
 
 // Prepare the INSERT statement using placeholders (?)
-$vendors = "INSERT INTO vendor_list (count, vendor, tradeNo, phone, phone2, email, email2, mobile, mobile2, emirates) 
+$vendors = "INSERT INTO vendor_list_premium (count, vendor, tradeNo, phone, phone2, email, email2, mobile, mobile2, emirates) 
             VALUES (NULL, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 // Initialize the prepared statement
