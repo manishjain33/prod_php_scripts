@@ -7,7 +7,7 @@ $selected = mysqli_select_db($dbhandle,'vendor') ;
 if($dbhandle->connect_errno > 0){
   die('Unable to connect to database' . $dbhandle->connect_error);
 }
-$_GET["em"]="all";
+//$_GET["em"]="all";
 switch ($_GET["em"]) {
   case "du":
     $vendors = "select * from vendor_list where emirates= 'Dubai'";
