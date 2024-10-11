@@ -8,7 +8,7 @@ if($dbhandle->connect_errno > 0){
   die('Unable to connect to database' . $dbhandle->connect_error);
 }
 if($_GET["em"]=="du"){
-    $vendors = "select * from vendor_list where emirates= 'Dubai'";
+    echo $vendors = "select * from vendor_list where emirates= 'Dubai'";
 }else if($_GET["em"]=="sh"){
     $vendors = "select * from vendor_list where emirates= 'Sharjah'";
 }else if($_GET["em"]=="fu"){
