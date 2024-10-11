@@ -29,6 +29,6 @@ for($a=0;$a<count($vin_tarsData);$a++){
     }
     print_r($vin_tarsData[$a]["sno"]);
     echo" - ";
-    print_r($vin_tarsData[$a]["vin"]);
+    print_r($vin_tarsData[$a]["chassis"]);
     echo "<br> \n";
 }
