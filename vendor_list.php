@@ -7,7 +7,7 @@ $selected = mysqli_select_db($dbhandle,'vendor') ;
 if($dbhandle->connect_errno > 0){
   die('Unable to connect to database' . $dbhandle->connect_error);
 }
-//$_GET["em"]="all";
+$_GET["em"]="all";
 switch ($_GET["em"]) {
   case "du":
     $vendors = "select * from vendor_list where emirates= 'Dubai'";
@@ -28,5 +28,5 @@ while ($vendorsRow = mysqli_fetch_assoc($vendors_result))
     $vendorsData[]=$vendorsRow;
   }
   //print_r($vendorsData);
-  $json =json_decode(json_encode($vendorsData, JSON_FORCE_OBJECT));
+  $json =json_encode($vendorsData, JSON_FORCE_OBJECT);
   var_dump($json);
