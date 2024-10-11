@@ -49,8 +49,27 @@ while ($vendorsRow = mysqli_fetch_assoc($vendors_result)) {
   $vendorsData[] = $vendorsRow;
 }
 
-// Output the data as JSON
-echo json_encode($vendorsData, JSON_UNESCAPED_UNICODE);
+// Check if the array has data
+if (empty($vendorsData)) {
+  die('No data found');
+}
+
+// Print the array for debugging (optional)
+print_r($vendorsData); // You can comment this out later
+
+// Set the header to output JSON
+header('Content-Type: application/json');
+
+// Encode the array to JSON
+$jsonData = json_encode($vendorsData, JSON_UNESCAPED_UNICODE);
+
+// Check if `json_encode` failed
+if ($jsonData === false) {
+  die('Error encoding JSON: ' . json_last_error_msg());
+}
+
+// Output the JSON data
+echo $jsonData;
 
 // Close the database connection
 mysqli_close($dbhandle);
