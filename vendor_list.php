@@ -9,11 +9,11 @@ if($dbhandle->connect_errno > 0){
 }
 if($_GET["em"]=="du"){
     $vendors = "select * from vendor_list where emirates= 'Dubai'";
-}else if($_GET["eu"]=="sh"){
+}else if($_GET["em"]=="sh"){
     $vendors = "select * from vendor_list where emirates= 'Sharjah'";
-}else if($_GET["eu"]=="fu"){
+}else if($_GET["em"]=="fu"){
     $vendors = "select * from vendor_list where emirates= 'Fajairah'";
-}else if($_GET["eu"]=="all"){
+}else if($_GET["em"]=="all"){
     $vendors = "select * from vendor_list";
 }
 $vendors_result = mysqli_query($dbhandle, $vendors);
@@ -21,4 +21,5 @@ while ($vendorsRow = mysqli_fetch_assoc($vendors_result))
   {
     $vendorsData[]=$vendorsRow;
   }
-  print_r($vendorsData);
+  //print_r($vendorsData);
+echo json_encode($vendorsData);
