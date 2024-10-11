@@ -8,7 +8,7 @@ if($dbhandle->connect_errno > 0){
   die('Unable to connect to database' . $dbhandle->connect_error);
 }
 if($_GET["em"]=="du"){
-    echo $vendors = "select * from vendor_list where emirates= 'Dubai'";
+    $vendors = "select * from vendor_list where emirates= 'Dubai'";
 }else if($_GET["eu"]=="sh"){
     $vendors = "select * from vendor_list where emirates= 'Sharjah'";
 }else if($_GET["eu"]=="fu"){
@@ -21,4 +21,4 @@ while ($vendorsRow = mysqli_fetch_assoc($vendors_result))
   {
     $vendorsData[]=$vendorsRow;
   }
-  //print_r($vendorsData);
+  print_r($vendorsData);
