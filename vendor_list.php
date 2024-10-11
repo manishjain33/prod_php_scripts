@@ -5,13 +5,16 @@ $hostname = "localhost";
 $dbhandle = mysqli_connect($hostname, $username, $password);
 
 // Check if connection was successful
-if(!$dbhandle){
+if (!$dbhandle) {
   die('Unable to connect to database: ' . mysqli_connect_error());
 }
 
+// Set the character set to UTF-8
+mysqli_set_charset($dbhandle, "utf8");
+
 // Select the database
 $selected = mysqli_select_db($dbhandle, 'vendor');
-if(!$selected){
+if (!$selected) {
   die('Unable to select database: ' . mysqli_error($dbhandle));
 }
 
@@ -44,8 +47,10 @@ if (!$vendors_result) {
 // Initialize an array to store vendor data
 $vendorsData = [];
 
-// Fetch the results into an array
+// Fetch the results into an array and convert to UTF-8
 while ($vendorsRow = mysqli_fetch_assoc($vendors_result)) {
+  // Convert each value to UTF-8 (if necessary)
+  $vendorsRow = array_map('utf8_encode', $vendorsRow);
   $vendorsData[] = $vendorsRow;
 }
 
@@ -53,9 +58,6 @@ while ($vendorsRow = mysqli_fetch_assoc($vendors_result)) {
 if (empty($vendorsData)) {
   die('No data found');
 }
-
-// Print the array for debugging (optional)
-print_r($vendorsData); // You can comment this out later
 
 // Set the header to output JSON
 header('Content-Type: application/json');
