@@ -25,6 +25,8 @@ switch ($_GET["em"]) {
 $vendors_result = mysqli_query($dbhandle, $vendors);
 while ($vendorsRow = mysqli_fetch_assoc($vendors_result))
   {
-    $vendorsData[]=json_encode($vendorsRow);
+    $vendorsData[]=$vendorsRow;
   }
-  print_r($vendorsData);
+  //print_r($vendorsData);
+  $json =json_decode(json_encode($vendorsData, JSON_FORCE_OBJECT));
+  var_dump($json);
