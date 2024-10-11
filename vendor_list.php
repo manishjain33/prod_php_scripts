@@ -7,14 +7,19 @@ $selected = mysqli_select_db($dbhandle,'vendor') ;
 if($dbhandle->connect_errno > 0){
   die('Unable to connect to database' . $dbhandle->connect_error);
 }
-if($_GET["em"]=="du"){
+switch ($_GET["em"]) {
+  case "du":
     $vendors = "select * from vendor_list where emirates= 'Dubai'";
-}else if($_GET["em"]=="sh"){
+    break;
+  case "sh":
     $vendors = "select * from vendor_list where emirates= 'Sharjah'";
-}else if($_GET["em"]=="fu"){
+    break;
+  case "fu":
     $vendors = "select * from vendor_list where emirates= 'Fajairah'";
-}else if($_GET["em"]=="all"){
+    break;
+  case "all":
     $vendors = "select * from vendor_list";
+    break;
 }
 $vendors_result = mysqli_query($dbhandle, $vendors);
 while ($vendorsRow = mysqli_fetch_assoc($vendors_result))
@@ -23,4 +28,4 @@ while ($vendorsRow = mysqli_fetch_assoc($vendors_result))
   }
   //print_r($vendorsData);
 $aa=json_encode($vendorsData);
-var_dump($aa);
+echo json_decode($aa);
