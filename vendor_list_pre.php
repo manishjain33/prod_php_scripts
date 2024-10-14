@@ -44,6 +44,9 @@ if (empty($vendorsData)) {
 
 // Set the header to output JSON
 header('Content-Type: application/json');
+header("Access-Control-Allow-Origin: *"); 
+header("Access-Control-Allow-Methods: GET, OPTIONS"); 
+header("Access-Control-Allow-Headers: Content-Type");
 
 // Encode the array to JSON
 $jsonData = json_encode($vendorsData, JSON_UNESCAPED_UNICODE);
