@@ -15,8 +15,6 @@ while ($trackersRow = mysqli_fetch_assoc($trackers_result))
     $trackersData[]=$trackersRow;
   }
 //print_r($trackersData);
-print_r(count($trackersData));
-die();
 echo "<table>";
 for ($i=0;$i<=count($trackersData);$i++){
 //for ($i=0;$i<=3;$i++){
@@ -27,7 +25,7 @@ for ($i=0;$i<=count($trackersData);$i++){
       $chassis[]=$row['chasis_number'];
       echo "<td>".$trackersData[$i]["tid"]."</td><td>".$row['chasis_number']."</td><td>". $row['category']. "</td><td>".$trackersData[$i]["user"]."</td><td>".$trackersData[$i]["type"]."</td><td>".$trackersData[$i]["created"]."</td></tr>";
   }
-
+sleep(3);
 }
 echo "</table>";
 ?>
